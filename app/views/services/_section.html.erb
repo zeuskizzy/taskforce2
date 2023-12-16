@@ -1,0 +1,27 @@
+<div class="col-lg-4 col-md-6">
+    <div class="single-blog">
+
+      <%= link_to section do %>
+      <%= image_tag (section.secimg_url.to_s) %>
+
+<% end %>
+
+        <div class="blog-content">
+            <div class="tag">Help Guide</div>
+            <h3>
+                <%= link_to section do %>
+                  <%= section.title %>
+                  <% end %>
+            </h3>
+            <ul class="post-meta">
+                <li>
+                    <i class="flaticon-user"></i>
+                    from
+                    <%= @service.title %>
+                </li>
+
+            </ul>
+            <p><%= section.sub_title %></p>
+        </div>
+    </div>
+</div>

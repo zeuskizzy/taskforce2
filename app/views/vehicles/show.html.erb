@@ -1,0 +1,63 @@
+
+<%= render "accounts/topbox" %>
+<div class="row">
+  <div class="col-12">
+    <div class="row">
+
+    <div class="col-6">
+      <div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Host Information</h5>
+        <p class="card-text">   <strong>first name:</strong>
+          <%= @vehicle.l_first_name %>   <strong>last name:</strong>
+            <%= @vehicle.l_last_name %>
+
+        </p>
+        <p class="card-text">
+          <strong>Pick-Up address:</strong>
+          <%= @vehicle.l_address %>
+        </p>
+
+        <p class="card-text">
+          <strong>Contact email:</strong>
+          <%= @vehicle.l_email %>
+        </p>
+
+        <p class="card-text"><small class="text-muted"><%= link_to 'Edit Information', edit_vehicle_path(@vehicle) %></small></p>
+    </div>
+</div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Vehicle Information</h5>
+        <p class="card-text">
+          <strong>Vehicle name:</strong>
+          <%= @vehicle.v_name %>
+
+        </p>
+        <p class="card-text">
+          <strong>Vehicle type:</strong>
+          <%= @vehicle.v_type %>
+        </p>
+        <p class="card-text">
+          <strong>Vehicle plate number:</strong>
+          <%= @vehicle.v_plate_number %>
+        </p>
+        <p>
+          <strong>Host phone number:</strong>
+          <%= @vehicle.l_phone %>
+        </p>
+        <p class="card-text">
+          <strong>Additional Vehicle info:</strong>
+          <%= @vehicle.v_info %>
+
+        </p>
+        <p class="card-text"><small class="text-muted"><%= link_to 'Edit Information', edit_vehicle_path(@vehicle) %></small></p>
+    </div>
+</div>
+    </div>
+  </div>
+
+  </div>
+</div>

@@ -1,0 +1,50 @@
+
+<%= simple_form_for(@vehicle) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div class="row y-gap-20">
+
+    <div class="col-12">
+      <h1 class="text-22 fw-500">Host Information</h1>
+      <p class="mt-10">Please fill out the required Information </p>
+    </div>
+  <div class="form-input row col-6">
+    <%= f.input :l_first_name, label: "First Name", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+    </div>
+    <div class="form-input row col-6">
+
+    <%= f.input :l_last_name, label: "Last Name", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+    </div>
+    <div class="form-input row col-6">
+    <%= f.input :l_address, label: "Pick-Up Location", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+    </div>
+    <div class="form-input row col-6">
+
+    <%= f.input :l_email, label: "Host E-mail", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+    </div>
+
+    </div>
+    <div class="row y-gap-20">
+
+    <div class="col-12">
+      <h1 class="text-22 fw-500">Vehicle Information</h1>
+      <p class="mt-10">Please fill out the required Information </p>
+    </div>
+    <div class="form-input row col-12">
+    <%= f.input :v_name, label:"Vehicle name", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+    </div>
+    <div class="form-input row col-12">
+    <%= f.input :v_type, label: "Vehicle Type", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+    </div>
+    <div class="form-input row col-12">
+    <%= f.input :v_plate_number, label: "Vehicle Plate Number", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+    </div>
+    <div class="form-input row col-12">
+    <%= f.input :v_info, label: "Vehicle Information", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+  </div>
+
+  <div class="form-input row col-12">
+    <%= f.button :submit, " Add Vehicle", class: "button py-20 -dark-1 bg-blue-1 text-white col-12" do %>   <div class="icon-arrow-top-right ml-15"> <% end %>
+  </div>
+<% end %>

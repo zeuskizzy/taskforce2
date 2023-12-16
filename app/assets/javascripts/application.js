@@ -1,0 +1,19 @@
+//= require jquery3
+//= require popper
+//= require bootstrap.bundle.min
+//= require rails-ujs
+//= require jquery.meanmenu
+//= require owl.carousel.min
+//= require jquery.appear
+//= require odometer.min
+//= require nice-select.min
+//= require jquery.magnific-popup.min
+//= require slick.min
+//= require jquery-ui.min
+//= require jquery.ajaxchimp.min
+//= require form-validator.min
+//= require contact-form-script
+//= require wow.min
+//= require main
+
+//= require toastr

@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Headers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Abouts title</th>
+      <th>Abouts sub title</th>
+      <th>Services title</th>
+      <th>Services sub title</th>
+      <th>Boards title</th>
+      <th>Boards sub title</th>
+      <th>Features title</th>
+      <th>Features sub title</th>
+      <th>Feedbacks title</th>
+      <th>Feedbacks sub title</th>
+      <th>Blogs title</th>
+      <th>Blogs sub title</th>
+      <th>Projects title</th>
+      <th>Projects sub title</th>
+      <th>Cta1</th>
+      <th>Cta2</th>
+      <th>Headerimg</th>
+      <th>Products title</th>
+      <th>Products sub title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @headers.each do |header| %>
+      <tr>
+        <td><%= header.abouts_title %></td>
+        <td><%= header.abouts_sub_title %></td>
+        <td><%= header.services_title %></td>
+        <td><%= header.services_sub_title %></td>
+        <td><%= header.boards_title %></td>
+        <td><%= header.boards_sub_title %></td>
+        <td><%= header.features_title %></td>
+        <td><%= header.features_sub_title %></td>
+        <td><%= header.feedbacks_title %></td>
+        <td><%= header.feedbacks_sub_title %></td>
+        <td><%= header.blogs_title %></td>
+        <td><%= header.blogs_sub_title %></td>
+        <td><%= header.projects_title %></td>
+        <td><%= header.projects_sub_title %></td>
+        <td><%= header.cta1 %></td>
+        <td><%= header.cta2 %></td>
+        <td><%= header.headerimg %></td>
+        <td><%= header.products_title %></td>
+        <td><%= header.products_sub_title %></td>
+        <td><%= link_to 'Show', header %></td>
+        <td><%= link_to 'Edit', edit_header_path(header) %></td>
+        <td><%= link_to 'Destroy', header, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Header', new_header_path %>

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listingitems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Iframelink</th>
+      <th>Mileage</th>
+      <th>Bodytype</th>
+      <th>Doors</th>
+      <th>Engine</th>
+      <th>Transmission</th>
+      <th>Drivetrain</th>
+      <th>Exteriorcolor</th>
+      <th>Interiorcolor</th>
+      <th>Condition</th>
+      <th>Feul</th>
+      <th>Title</th>
+      <th>Slug</th>
+      <th>Listingcat</th>
+      <th>References</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listingitems.each do |listingitem| %>
+      <tr>
+        <td><%= listingitem.iframelink %></td>
+        <td><%= listingitem.mileage %></td>
+        <td><%= listingitem.bodytype %></td>
+        <td><%= listingitem.doors %></td>
+        <td><%= listingitem.engine %></td>
+        <td><%= listingitem.transmission %></td>
+        <td><%= listingitem.drivetrain %></td>
+        <td><%= listingitem.exteriorcolor %></td>
+        <td><%= listingitem.interiorcolor %></td>
+        <td><%= listingitem.condition %></td>
+        <td><%= listingitem.feul %></td>
+        <td><%= listingitem.title %></td>
+        <td><%= listingitem.slug %></td>
+        <td><%= listingitem.listingcat %></td>
+        <td><%= listingitem.references %></td>
+        <td><%= link_to 'Show', listingitem %></td>
+        <td><%= link_to 'Edit', edit_listingitem_path(listingitem) %></td>
+        <td><%= link_to 'Destroy', listingitem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listingitem', new_listingitem_path %>

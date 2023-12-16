@@ -1,0 +1,111 @@
+<!-- Side Nav START -->
+<div class="side-nav vertical-menu nav-menu-light scrollable">
+    <div class="nav-logo">
+      <% @headers.take(1).each do |w| %>
+        <div class="w-100 logo">
+            <img class="img-fluid" src="<%= w.adminlogoimg_url.to_s %>" style="max-height: 70px;" alt="logo">
+        </div>
+        <% end %>
+        <div class="mobile-close">
+            <i class="icon-arrow-left feather"></i>
+        </div>
+     </div>
+     <ul class="nav-menu">
+        <li class="nav-menu-item">
+          <%= link_to accounts_path do %>
+                <i class="feather icon-home"></i>
+                <span class="nav-menu-item-title">Dashboard</span>
+            <% end %>
+        </li>
+        <li class="nav-group-title">Vehicles</li>
+        <li class="nav-menu-item">
+          <%= link_to vehicles_path do %>
+
+                <i class="feather icon-mail"></i>
+                <span class="nav-menu-item-title">Co-Hosts</span>
+            <% end %>
+        </li>
+        <li class="nav-menu-item">
+          <%= link_to new_vehicle_path do %>
+                <i class="feather icon-message-circle"></i>
+                <span class="nav-menu-item-title">Add Vehicles</span>
+            <% end %>
+        </li>
+
+        <li class="nav-group-title">Repo Rescue</li>
+        <li class="nav-submenu open">
+            <a class="nav-submenu-title">
+                <i class="feather icon-box"></i>
+                <span>Repo Rescue</span>
+                <i class="feather icon-chevron-down"></i>
+            </a>
+            <ul class="nav-menu menu-collapse" style="display: block;">
+                <li class="nav-menu-item">
+                  <%= link_to reporescues_path do %>
+
+                      Active Repo's
+                    <% end %>
+                </li>
+
+                <li class="nav-menu-item">
+                  <%= link_to new_reporescue_path do %>
+                  Apply For Rescue
+                  <% end %>
+                </li>
+
+            </ul>
+        </li>
+
+        <li class="nav-group-title">Repair Rescue</li>
+        <li class="nav-submenu open">
+            <a class="nav-submenu-title">
+                <i class="feather icon-box"></i>
+                <span>Repair Rescue</span>
+                <i class="feather icon-chevron-down"></i>
+            </a>
+            <ul class="nav-menu menu-collapse" style="display: block;">
+                <li class="nav-menu-item">
+                  <%= link_to reporepairs_path do %>
+
+                    Repair  Bookings
+                    <% end %>
+                </li>
+
+                <li class="nav-menu-item">
+                  <%= link_to new_reporepair_path do %>
+                  Apply For Repairs
+                  <% end %>
+                </li>
+
+            </ul>
+        </li>
+
+
+        <li class="nav-submenu">
+            <a class="nav-submenu-title">
+                <i class="feather icon-package"></i>
+                <span>Knowlege Base</span>
+                <i class="feather icon-chevron-down"></i>
+            </a>
+            <ul class="nav-menu menu-collapse">
+                <li class="nav-menu-item">
+                  <%= link_to blogs_path do %>
+News<% end %>
+                </li>
+                <li class="nav-menu-item">
+                  <%= link_to abouts_path do %>
+About Us<% end %>
+                </li>
+                <li class="nav-menu-item">
+                  <%= link_to services_path do %>
+Services<% end %>
+                </li>
+
+            </ul>
+        </li>
+
+
+
+    </ul>
+</div>
+<!-- Side Nav END -->

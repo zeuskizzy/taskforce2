@@ -1,0 +1,21 @@
+
+<%= simple_form_for(@plan) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :amount %>
+    <%= f.input :name %>
+    <%= f.input :referal %>
+    <%= f.input :duration %>
+    <%= f.input :plan %>
+    <%= f.input :plan_name %>
+    <%= f.input :mini %>
+    <%= f.input :maxi %>
+    <%= f.input :body %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

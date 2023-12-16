@@ -1,0 +1,125 @@
+
+  <% if Review.exists? %>
+  <!-- Start Testimonials Area -->
+  <section class="testimonials-area ptb-100">
+      <div class="container">
+        <% @headers.take(1).each do |a| %>
+          <div class="section-title">
+              <h2><%= a.feedbacks_title %></h2>
+              <p><%=  a.feedbacks_sub_title %></p>
+          </div>
+          <% end %>
+
+          <div class="testimonials-slides owl-carousel owl-theme">
+
+            <% @reviews.each do |a| %>
+
+              <div class="testimonials-item">
+                  <div class="icon">
+                      <i class="flaticon-quote"></i>
+                  </div>
+                  <p>“<%= raw(a.body) %>”</p>
+                  <div class="info-name">
+                      <h3><%= a.title %></h3>
+                      <span><%= a.icon %></span>
+                  </div>
+              </div>
+
+              <% end %>
+
+          </div>
+      </div>
+  </section>
+
+  <% else %>
+
+  <!-- Start Testimonials Area -->
+  <section class="testimonials-area ptb-100">
+      <div class="container">
+          <div class="section-title">
+              <h2>PEOPLE TALKING ABOUT US</h2>
+          </div>
+
+          <div class="testimonials-slides owl-carousel owl-theme">
+              <div class="testimonials-item">
+                  <div class="icon">
+                      <i class="flaticon-quote"></i>
+                  </div>
+                  <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.”</p>
+                  <div class="info-name">
+                      <img src="assets/images/testimonials/testimonials-1.jpg" alt="image">
+                      <h3>Steve L. Elder</h3>
+                      <span>CEO Founder</span>
+                  </div>
+              </div>
+
+              <div class="testimonials-item">
+                  <div class="icon">
+                      <i class="flaticon-quote"></i>
+                  </div>
+                  <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.”</p>
+                  <div class="info-name">
+                      <img src="assets/images/testimonials/testimonials-2.jpg" alt="image">
+                      <h3>Alex Hales</h3>
+                      <span>Manager</span>
+                  </div>
+              </div>
+
+              <div class="testimonials-item">
+                  <div class="icon">
+                      <i class="flaticon-quote"></i>
+                  </div>
+                  <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.”</p>
+                  <div class="info-name">
+                      <img src="assets/images/testimonials/testimonials-3.jpg" alt="image">
+                      <h3>John Smith</h3>
+                      <span>Customer Advisor</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- End Testimonials Area -->
+  <% end %>
+  <!-- Start Fun Facts Area -->
+  <section class="fun-facts-area pt-100 pb-70">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="single-fun-fact">
+                      <h3>
+                          <span class="odometer" data-count="1421">00</span>
+                      </h3>
+                      <p>New Visitors</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="single-fun-fact">
+                      <h3>
+                          <span class="odometer" data-count="300">00</span>
+                      </h3>
+                      <p>Happy Customers</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="single-fun-fact">
+                      <h3>
+                          <span class="odometer" data-count="1760">00</span>
+                      </h3>
+                      <p>Vehicle Fleet</p>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6 col-sm-6">
+                  <div class="single-fun-fact">
+                      <h3>
+                          <span class="odometer" data-count="4">00</span>
+                      </h3>
+                      <p>Years of Serving</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>

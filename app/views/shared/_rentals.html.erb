@@ -1,0 +1,137 @@
+
+<% if Rental.exists? %>
+<!-- Start Featured Cars Area -->
+<section class="featured-cars-area pt-100 pb-70">
+    <div class="container">
+      <% @headers.each do |a| %>
+        <div class="section-title">
+            <h2><%= a.projects_title %></h2>
+            <p><%= a.projects_sub_title %></p>
+        </div>
+        <% end %>
+        <div class="row">
+          <% @rentals.take(6).each do  |a| %>
+            <div class="<%= a.optionclass %>">
+                <div class="single-featured-cars">
+                    <%= link_to a do %>
+                      <img src="<%= a.rentalimg_url.to_s %>" alt="image">
+                    <% end %>
+
+                    <div class="content">
+                        <h3>
+                          <%= link_to a do %>
+
+                            <%= a.title %>
+
+                            <% end %>
+                        </h3>
+                        <p><b>Location:</b> <%= a.address %></p>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+
+
+        </div>
+    </div>
+</section>
+<!-- End Featured Cars Area -->
+<% else %>
+<!-- Start Featured Cars Area -->
+<section class="featured-cars-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>Rentals</h2>
+            <p>Exprience Wonder</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 offset-lg-0 offset-md-3">
+                <div class="single-featured-cars">
+                    <a href="car-details.html"><img src="<%= asset_path 'featured-cars/featured-cars-1.jpg' %>" alt="image"></a>
+
+                    <div class="content">
+                        <div class="tag">$30,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 VOLVO XC60</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 4 Miles, Orland Park</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="single-featured-cars">
+                    <a href="car-details.html"><img src="<%= asset_path 'featured-cars/featured-cars-2.jpg' %>" alt="image"></a>
+
+                    <div class="content">
+                        <div class="tag">$20,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 MAZDA CX-30</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 5 Miles, Willoughby Hills OH</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="single-featured-cars">
+                    <a href="car-details.html"><img src="<%= asset_path 'featured-cars/featured-cars-3.jpg' %>" alt="image"></a>
+
+                    <div class="content">
+                        <div class="tag">$40,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 MAZDA CX-10</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 7 Miles, Orland Park</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="single-featured-cars">
+                    <a href="car-details.html"><img src="<%= asset_path 'featured-cars/featured-cars-4.jpg' %>" alt="image"></a>
+
+                    <div class="content">
+                        <div class="tag">$55,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 TOYOTA RAV4</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 4 Miles, Orland Park</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 offset-lg-0 offset-md-3">
+                <div class="single-featured-cars">
+                    <a href="car-details.html"><img src="<%= asset_path 'featured-cars/featured-cars-5.jpg' %>" alt="image"></a>
+
+                    <div class="content">
+                        <div class="tag">$90,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 NISSAN CX-10</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 7 Miles, Orland Park</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="single-featured-cars">
+                    <a href="car-details.html"><img src="<%= asset_path 'featured-cars/featured-cars-6.jpg' %>" alt="image"></a>
+
+                    <div class="content">
+                        <div class="tag">$45,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 VOLVO XC60</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 6 Miles, Ramsey, NJ</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Featured Cars Area -->
+
+<% end %>

@@ -1,0 +1,613 @@
+  <% if Welcome.exists? %>
+  <!-- Start Navbar Area -->
+  <div class="navbar-area">
+    <div class="main-responsive-nav">
+      <div class="container">
+        <div class="main-responsive-menu">
+          <div class="logo">
+            <%= link_to root_path do  %>
+            <img src="<%= asset_path "black1.png" %>" >
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-navbar">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <%= link_to root_path, class: "navbar-brand" do %>
+          <img src="<%= asset_path "white1.png"%>" class="white-logo" alt="image">
+          <img src="<%= asset_path "black1.png"%>" class="black-logo" alt="image">
+          <% end %>
+
+          <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item">
+                <%= link_to root_path, class: "nav-link"  do %>
+                  Home
+
+                <% end %>
+
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Main Menu
+                  <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="dropdown-menu">
+
+
+
+
+
+
+                  <li class="nav-item">
+                    <%= link_to abouts_path, class: "nav-link active" do %>
+                    About Us
+                    <i class='bx bx-chevron-down'></i>
+                    <% end %>
+
+                    <ul class="dropdown-menu">
+                      <% @abouts.each do |a| %>
+
+                      <li class="nav-item">
+                        <%= link_to  a, class: "nav-link" do %>
+                        <%= a.title %>
+                        <% end %>
+                      </li>
+
+                      <% end %>
+                      <li><%= link_to abouts_path, class: "nav-link" do %>
+                        View More
+                        <% end %>
+
+                      </li>
+
+
+
+                    </ul>
+                  </li>
+
+                                    <li class="nav-item">      <%= link_to lux_listingitems_path, class: "nav-link" do %>
+                                          Luxe Partners
+                                          <% end %></li>
+
+                  <li class="nav-item">
+                    <%= link_to services_path, class: "nav-link active" do %>
+                    Our Services
+                    <i class='bx bx-chevron-down'></i>
+                    <% end %>
+
+                    <ul class="dropdown-menu">
+                      <% @services.take(4).each do |a| %>
+
+                      <li class="nav-item">
+                        <%= link_to  a, class: "nav-link" do %>
+                        <%= a.title %>
+                        <% end %>
+                      </li>
+
+                      <% end %>
+                      <li><%= link_to services_path, class: "nav-link" do %>
+                        View All Services
+                        <% end %>
+
+                      </li>
+
+
+
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <%= link_to blogs_path, class: "nav-link" do %>
+                    News & Updates
+
+                    <% end %>
+                  </li>
+
+
+
+
+
+
+
+                </ul>
+              </li>
+
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                Rentals
+                  <i class='bx bx-chevron-down'></i>
+                </a>
+                <ul class="dropdown-menu">
+                  <% @rentals.each do |a| %>
+                  <li class="nav-item">
+                    <%= link_to a, class: "nav-link" do %>
+                    <%= a.title %>
+                    <% end %>
+                  </li>
+                  <% end %>
+
+                </ul>
+
+              </li>
+
+              <li class="nav-item">
+
+                <a href="#" class="nav-link">
+                  Vehicle Categories
+                  <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <% @listingcats.take(4).each do |a| %>
+                  <li class="nav-item">
+                    <%= link_to a, class: "nav-link" do %>
+                    <%= a.title %>
+                    <% end %>
+                  </li>
+                  <% end %>
+
+                  <li><%= link_to listingcats_path, class: "nav-link" do %>
+                    View All Categories
+                    <% end %>
+
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Vehicle Options
+                      <i class='bx bx-chevron-down'></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          New
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          Old
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+
+              </li>
+
+
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Help Center
+                  <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <%= link_to abouts_path, class: "nav-link" do %>
+                    About Us
+
+                    <% end %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to faqs_path, class: "nav-link" do %>
+                    FAQ's
+                    <% end %>
+                  </li>
+
+                  </ul>
+                  </li>
+
+
+
+
+            </ul>
+
+                                        <div class="others-options d-flex align-items-center">
+                                          <% if user_signed_in? %>
+
+                                            <div class="option-item">
+                                                <div class="dropdown-account">
+                                                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                                        <i class='flaticon-user'></i>
+                                                        <span>My Account <i class='bx bx-chevron-down'></i></span>
+                                                    </button>
+
+                                                    <div class="dropdown-menu">
+                                                      <%= link_to accounts_path, class: "dropdown-item" do %>
+
+                                                            <span>DashBoard</span>
+
+                                                        <% end %>
+                                                        <%= link_to vehicles_path, class: "dropdown-item"   do %>
+
+                                                        <a href="register.html" class="dropdown-item">
+                                                            <span>My Wishlists</span>
+                                                        </a>
+                                                        <% end %>
+                                                        <%= link_to reporepairs_path, class: "dropdown-item" do %>
+                                                            <span>Repair Rescue</span>
+                                                        <% end %>
+                                                    </div>
+                                                </div>
+                                            </div>
+            <div class="option-item">
+              <%= link_to new_vehicle_path, class: "navbar-btn" do %>
+                Submit An Order
+              <% end %>
+            </div>
+            <% else %>
+
+            <div class="option-item">
+              <%= link_to new_user_registration_path, class: "navbar-btn" do %>
+                Sign Up For 50% Discount
+              <% end %>
+            </div>
+            <% end %>
+
+
+          </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <div class="others-option-for-responsive">
+    <div class="container">
+      <div class="dot-menu">
+        <div class="inner">
+          <div class="circle circle-one"></div>
+          <div class="circle circle-two"></div>
+          <div class="circle circle-three"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="option-inner">
+          <div class="others-options d-flex align-items-center">
+
+            <% if user_signed_in? %>
+
+            <div class="option-item">
+                <div class="dropdown-account">
+                    <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                        <i class='flaticon-user'></i>
+                        <span>My Account <i class='bx bx-chevron-down'></i></span>
+                    </button>
+
+                    <div class="dropdown-menu">
+                      <%= link_to accounts_path, class: "dropdown-item" do %>
+
+                            <span>DashBoard</span>
+
+                        <% end %>
+                        <%= link_to vehicles_path, class: "dropdown-item"   do %>
+
+                        <a href="register.html" class="dropdown-item">
+                            <span>My Wishlists</span>
+                        </a>
+                        <% end %>
+                        <%= link_to reporepairs_path, class: "dropdown-item" do %>
+                            <span>Repair Rescue</span>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="option-item">
+              <%= link_to new_vehicle_path, class: "navbar-btn" do %>
+                Submit An Order
+              <% end %>
+            </div>
+  <% else %>
+  <div class="option-item">
+    <%= link_to new_user_registration_path, class: "navbar-btn" do %>
+      Sign Up For 50% Discount
+    <% end %>
+  </div>
+
+  <% end %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Navbar Area -->
+
+
+  <% else %>
+
+  <!-- Start Navbar Area -->
+  <div class="navbar-area">
+    <div class="main-responsive-nav">
+      <div class="container">
+        <div class="main-responsive-menu">
+          <div class="logo">
+            <%= link_to root_path do  %>
+            <img src="<img src="<%= asset_path "black1.png"%>" alt="image">
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-navbar">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-light">
+          <%= link_to root_path, class: "navbar-brand" do  %>
+
+          <img src="<%= asset_path "white1.png"%>" class="white-logo" alt="image">
+          <img src="<%= asset_path "black1.png"%>" class="black-logo" alt="image">
+          <% end %>
+
+          <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link active">
+                  Home
+                  <i class='bx bx-chevron-down'></i>
+                </a>
+
+
+              </li>
+
+
+
+
+              <li class="nav-item">
+                <a href="used-cars.html" class="nav-link">
+                  Luxe Partners
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Main Menu
+                  <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="about-us.html" class="nav-link">
+                      About Us
+                    </a>
+                  </li>
+
+
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                      Vehicle Options
+                      <i class='bx bx-chevron-down'></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          New Cars
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="#" class="nav-link active">
+                          Used Cars
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          Trade Offs
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Vehicle Categories
+                      <i class='bx bx-chevron-down'></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                      <li class="nav-item">
+                        <a href="#l" class="nav-link">
+                          Pickups
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="#" class="nav-link">
+                          Minivans
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="sedan.html" class="nav-link">
+                          Sedan
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="hatchbacks.html" class="nav-link">
+                          Hatchbacks
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="suvs.html" class="nav-link">
+                          SUVs
+                        </a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a href="car-details.html" class="nav-link">
+                          Car Details
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      Auto Loan Calculator
+                    </a>
+                  </li>
+
+
+
+                  <li class="nav-item">
+                    <a href="faq.html" class="nav-link">
+                      FAQ
+                    </a>
+                  </li>
+
+
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  Blog
+                  <i class='bx bx-chevron-down'></i>
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li class="nav-item">
+                    <a href="blog.html" class="nav-link">
+                      Blog
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
+                    <a href="blog-details.html" class="nav-link">
+                      Blog Details
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav-item">
+                <a href="contact.html" class="nav-link">
+                  Contact
+                </a>
+              </li>
+            </ul>
+
+            <div class="others-options d-flex align-items-center">
+              <div class="option-item">
+                <div class="dropdown-account">
+                  <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    <i class='flaticon-user'></i>
+                    <span>My Account <i class='bx bx-chevron-down'></i></span>
+                  </button>
+
+                  <div class="dropdown-menu">
+                    <a href="login.html" class="dropdown-item">
+                      <span>Login</span>
+                    </a>
+                    <a href="register.html" class="dropdown-item">
+                      <span>Register</span>
+                    </a>
+                    <a href="forgot-password.html" class="dropdown-item">
+                      <span>Forgot Password</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="option-item">
+                <div class="languages-list">
+                  <select>
+                    <option value="1">English</option>
+                    <option value="2">العربيّة</option>
+                    <option value="3">Deutsch</option>
+                    <option value="3">Português</option>
+                    <option value="3">简体中文</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="option-item">
+                <a href="submit-vehicle.html" class="navbar-btn">
+                  Sign Up For 50% Discount
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="others-option-for-responsive">
+      <div class="container">
+        <div class="dot-menu">
+          <div class="inner">
+            <div class="circle circle-one"></div>
+            <div class="circle circle-two"></div>
+            <div class="circle circle-three"></div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="option-inner">
+            <div class="others-options d-flex align-items-center">
+              <div class="option-item">
+                <div class="dropdown-account">
+                  <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+                    <i class='flaticon-user'></i>
+                    <span>My Account <i class='bx bx-chevron-down'></i></span>
+                  </button>
+
+                  <div class="dropdown-menu">
+                    <a href="login.html" class="dropdown-item">
+                      <span>Login</span>
+                    </a>
+                    <a href="register.html" class="dropdown-item">
+                      <span>Register</span>
+                    </a>
+                    <a href="forgot-password.html" class="dropdown-item">
+                      <span>Forgot Password</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="option-item">
+                <div class="languages-list">
+                  <select>
+                    <option value="1">English</option>
+                    <option value="2">العربيّة</option>
+                    <option value="3">Deutsch</option>
+                    <option value="3">Português</option>
+                    <option value="3">简体中文</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="option-item">
+                <a href="submit-vehicle.html" class="navbar-btn">
+                  Submit Vehicle
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Navbar Area -->
+
+  <% end %>

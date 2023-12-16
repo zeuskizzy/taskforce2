@@ -1,0 +1,137 @@
+
+
+          <% if Listingcat.exists? %>
+
+            <% @listingcats.each do |a| %>
+
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-car-shop-box">
+                      <div class="image">
+
+                          <%=link_to a do %>
+                            <img src="<%= a.catcarimg_url.to_s %>" alt="image">
+                            <% end %>
+                          <div class="icon">
+                            <% if a.status? %>
+                            <%=link_to a do %>
+                            <i class="flaticon-gallery"> In Stock</i>
+
+                            <% end %>
+                              <% else %>
+                              <a href="#">
+                                  <i class="flaticon-gallery"> Out Of Stock</i>
+                              </a>
+                              <% end %>
+                          </div>
+                      </div>
+
+                      <div class="content">
+                          <h3>
+                            <%= link_to a do %>
+                              <%= a.title %>
+
+                              <% end %>
+                          </h3>
+                      </div>
+                  </div>
+              </div>
+
+
+             <% end %>
+
+
+
+          <% else %>
+
+
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-car-shop-box">
+                      <div class="image">
+                          <a href="car-details.html"><img src="assets/images/hatchbacks/hatchbacks-1.jpg" alt="image"></a>
+
+                          <div class="icon">
+                              <a href="car-details.html">
+                                  <i class="flaticon-gallery"> 5</i>
+                              </a>
+                          </div>
+                      </div>
+
+                      <div class="content">
+                          <div class="tag">$75,000</div>
+                          <h3>
+                              <a href="car-details.html">2021 MAZDA CX-30</a>
+                          </h3>
+                          <p><b>MILEAGES</b> 3 Miles, Orland Park</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-car-shop-box">
+                      <div class="image">
+                          <a href="car-details.html"><img src="assets/images/hatchbacks/hatchbacks-2.jpg" alt="image"></a>
+
+                          <div class="icon">
+                              <a href="car-details.html">
+                                  <i class="flaticon-gallery"> 3</i>
+                              </a>
+                          </div>
+                      </div>
+
+                      <div class="content">
+                          <div class="tag">$30,000</div>
+                          <h3>
+                              <a href="car-details.html">2021 SUBARU XC-60</a>
+                          </h3>
+                          <p><b>MILEAGES</b> 7 Miles, Blauvelt, NY</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-car-shop-box">
+                      <div class="image">
+                          <a href="car-details.html"><img src="assets/images/hatchbacks/hatchbacks-3.jpg" alt="image"></a>
+
+                          <div class="icon">
+                              <a href="car-details.html">
+                                  <i class="flaticon-gallery"> 3</i>
+                              </a>
+                          </div>
+                      </div>
+
+                      <div class="content">
+                          <div class="tag">$45,000</div>
+                          <h3>
+                              <a href="car-details.html">2021 SUBARU XXX-10</a>
+                          </h3>
+                          <p><b>MILEAGES</b> 7 Miles, Nyack, NY</p>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-4 col-md-6">
+                  <div class="single-car-shop-box">
+                      <div class="image">
+                          <a href="car-details.html"><img src="assets/images/hatchbacks/hatchbacks-4.jpg" alt="image"></a>
+
+                          <div class="icon">
+                              <a href="car-details.html">
+                                  <i class="flaticon-gallery"> 4</i>
+                              </a>
+                          </div>
+                      </div>
+
+                      <div class="content">
+                          <div class="tag">$55,000</div>
+                          <h3>
+                              <a href="car-details.html">2021 KIA SOUL XC 60</a>
+                          </h3>
+                          <p><b>MILEAGES</b> 7 Miles, Nyack, NY</p>
+                      </div>
+                  </div>
+              </div>
+
+
+          </div>
+          <% end %>

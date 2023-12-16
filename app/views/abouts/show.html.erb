@@ -1,0 +1,35 @@
+<div class="page-banner-area">
+    <div class="container">
+        <div class="page-banner-content">
+            <h2><%= @about.title %></h2>
+
+            <ul class="pages-list">
+                <li><a href="#">Home</a></li>
+                <li><span><%= @about.title %></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<section class="terms-of-service-area ptb-100">
+            <div class="container">
+                <div class="terms-of-service-title">
+                    <h2><%= @about.title %></h2>
+                </div>
+
+                <div class="terms-of-service-box">
+                    <div class="terms-content">
+                        <h3><%= raw(@about.sub_title) %></h3>
+                        <p><%= raw(@about.body) %></p>
+                          </div>
+
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <%= render "shared/abtindex" %>
+        <%= render "shared/partners" %>
+        <%= render "shared/reviews" %>

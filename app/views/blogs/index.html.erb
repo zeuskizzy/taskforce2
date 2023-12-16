@@ -1,0 +1,151 @@
+  <!-- Start Page Banner -->
+  <div class="page-banner-area">
+      <div class="container">
+          <div class="page-banner-content">
+            <% @headers.each do |a| %>
+
+              <h2></h2>
+
+              <ul class="pages-list">
+                  <li><a href="#">Home</a></li>
+                  <li><span><%= a.blogs_title %></span></li>
+              </ul>
+              <% end %>
+          </div>
+      </div>
+  </div>
+  <!-- End Page Banner -->
+
+
+    <section class="blog-area bg-ffffff pt-100 pb-70">
+        <div class="container">
+
+            <div class="row">
+              <% @blogs.each do |a| %>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog">
+                        <%=link_to a do %>
+                          <img src="<%= a.blogimg_url.to_s %>" alt="image">
+                        <% end %>
+
+                        <div class="blog-content">
+                            <div class="tag">News</div>
+                            <h3>
+                              <%=link_to a do %>
+                                <%= a.title %>
+                                <% end %>
+                            </h3>
+                            <ul class="post-meta">
+                                <li>
+                                    <i class="flaticon-user"></i>
+                                    By:
+                                    <a href="#">Admin</a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-calendar"></i>
+                                    <%= a.created_at %>
+                                </li>
+                            </ul>
+                            <p><%= a.sub_title %>.</p>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </section>
+
+    <% else %>
+
+    <section class="blog-area bg-ffffff pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2>BLOG FEED</h2>
+                <p>Checkout latest news and articles from our blog</p>
+
+                <div class="section-btn">
+                    <a href="#" class="default-btn">
+                        View All
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog">
+                        <a href="blog-details.html"><img src="assets/images/blog/blog-1.jpg" alt="image"></a>
+
+                        <div class="blog-content">
+                            <div class="tag">News</div>
+                            <h3>
+                                <a href="blog-details.html">WHY CROSSOVERS ARE BETTER THAN HATCHBACK</a>
+                            </h3>
+                            <ul class="post-meta">
+                                <li>
+                                    <i class="flaticon-user"></i>
+                                    By:
+                                    <a href="#">Ander Smith</a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-calendar"></i>
+                                    Nov 20, 2021
+                                </li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet consetetur elitr sadipscing sed diam nonumy...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog">
+                        <a href="blog-details.html"><img src="assets/images/blog/blog-2.jpg" alt="image"></a>
+
+                        <div class="blog-content">
+                            <div class="tag">News</div>
+                            <h3>
+                                <a href="blog-details.html">NEW TESLA SXP-502D GETTING FOUR-CYLINDER ENGINE</a>
+                            </h3>
+                            <ul class="post-meta">
+                                <li>
+                                    <i class="flaticon-user"></i>
+                                    By:
+                                    <a href="#">Timothy</a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-calendar"></i>
+                                    Nov 19, 2021
+                                </li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet consetetur elitr sadipscing sed diam nonumy...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+                    <div class="single-blog">
+                        <a href="blog-details.html"><img src="assets/images/blog/blog-3.jpg" alt="image"></a>
+
+                        <div class="blog-content">
+                            <div class="tag">News</div>
+                            <h3>
+                                <a href="blog-details.html">THE TOP TEN MOST VALUABLE CARS BRANDS</a>
+                            </h3>
+                            <ul class="post-meta">
+                                <li>
+                                    <i class="flaticon-user"></i>
+                                    By:
+                                    <a href="#">Vasquez</a>
+                                </li>
+                                <li>
+                                    <i class="flaticon-calendar"></i>
+                                    Nov 18, 2021
+                                </li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet consetetur elitr sadipscing sed diam nonumy...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

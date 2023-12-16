@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h4
+        class="header-title mt-0">Recent Activity</h4>
+        <div class="table-responsive">
+          <table class="table">
+            <thead >
+              <tr>
+                <th>Booking Date</th>
+                <th>Vehicle Name</th>
+                <th>Vehicle type</th>
+                <th>Pick-up address</th>
+                <th>Delivery Address</th>
+                <th>Status</th>
+
+              </tr>
+              <!--end tr-->
+            </thead>
+            <tbody>
+              <% @reporepairs.each do |v| %>
+              <tr>
+
+              <td><%= v.created_at.strftime("%d") %>,
+                <span><%= v.created_at.strftime("%B") %></span>,
+                <span><%= v.created_at.strftime("%Y") %></span>
+              </td>
+              <td><%= v.v_name %></td>
+              <td><%= v.v_type %></td>
+              <td><%= v.pk_address %> </td>
+
+              <td><%= v.d_address %></td>
+
+
+              <td><% if v.status? %>
+
+                <%= link_to v, class: "btn btn-sm btn-outline-info" do %>
+                 Repairs Active
+                <% end %>
+                <% else %>
+                <%= link_to v, class: "btn btn-sm btn-outline-warning" do %>
+                Pending Inspection
+                <% end %>
+                <% end %>
+              </td>
+              <td><% if v.status? %>
+
+                <%= link_to v, class: "btn btn-success" do %>
+              Accepted
+                <% end %>
+                <% else %>
+                <%= link_to v, class: "btn btn-warning" do %>
+                Pending
+                <% end %>
+                <% end %>
+              </td>
+              <% end %>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--end card-body-->
+    </div>
+    <!--end card-->
+  </div>
+  <!--end col-->
+</div>

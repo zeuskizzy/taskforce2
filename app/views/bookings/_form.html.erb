@@ -1,0 +1,22 @@
+
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :address %>
+    <%= f.input :rentalproduct_id %>
+    <%= f.input :status %>
+    <%= f.association :user %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.input :desc %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

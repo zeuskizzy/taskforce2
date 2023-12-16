@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rentalproducts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Sub title</th>
+      <th>Desc</th>
+      <th>Body</th>
+      <th>Slug</th>
+      <th>Rental</th>
+      <th>Price</th>
+      <th>Discount</th>
+      <th>Location</th>
+      <th>Service</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rentalproducts.each do |rentalproduct| %>
+      <tr>
+        <td><%= rentalproduct.title %></td>
+        <td><%= rentalproduct.sub_title %></td>
+        <td><%= rentalproduct.desc %></td>
+        <td><%= rentalproduct.body %></td>
+        <td><%= rentalproduct.slug %></td>
+        <td><%= rentalproduct.rental_id %></td>
+        <td><%= rentalproduct.price %></td>
+        <td><%= rentalproduct.discount %></td>
+        <td><%= rentalproduct.location_id %></td>
+        <td><%= rentalproduct.service_id %></td>
+        <td><%= link_to 'Show', rentalproduct %></td>
+        <td><%= link_to 'Edit', edit_rentalproduct_path(rentalproduct) %></td>
+        <td><%= link_to 'Destroy', rentalproduct, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rentalproduct', new_rentalproduct_path %>

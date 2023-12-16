@@ -1,0 +1,89 @@
+<div class="row justify-content-center">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-9">
+                                                    <p class="text-dark mb-0 fw-semibold">Turo co-host</p>
+
+
+                                                    <br>
+                                                    <%= link_to vehicles_path do %>
+                                                    <button class="btn btn-sm btn-outline-info">Active hosting</button>
+                                                    <% end %>
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                      <h3 class="my-1 font-20 fw-bold">
+                                                        <%= Vehicle.where(user_id: current_user.id).count %>
+                                                      </h3>
+                                                    </div>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div> <!--end col-->
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-9">
+                                                    <p class="text-dark mb-0 fw-semibold">Repo Rescue</p>
+                                                    <br>
+                                                    <%= link_to reporescues_path do %>
+                                                    <button class="btn btn-sm btn-outline-primary">Applications</button>
+                                                    <% end %>
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                      <h3 class="my-1 font-20 fw-bold">
+                                                        <%= Reporescue.where(user_id: current_user.id).count %>
+                                                      </h3>
+                                                    </div>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div> <!--end col-->
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-9">
+                                                    <p class="text-dark mb-0 fw-semibold">Repair Rescue</p>
+                                                    <br>
+                                                    <%= link_to new_reporepair_path do %>
+                                                    <button class="btn btn-sm btn-outline-secondary">Make A Request</button>
+                                                    <% end %>
+
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                        <i class="ti ti-activity font-24 align-self-center text-muted"></i>
+                                                    </div>
+                                                </div> <!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div> <!--end col-->
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row d-flex justify-content-center">
+                                                <div class="col-9">
+                                                    <p class="text-dark mb-0 fw-semibold">Emergency Contacts</p>
+                                                    <br>
+                                                    <%= link_to abouts_path do %>
+                                                    <button class="btn btn-sm btn-outline-success">Contact Support</button>
+                                                    <% end %>
+                                                </div><!--end col-->
+                                                <div class="col-3 align-self-center">
+                                                    <div class="d-flex justify-content-center align-items-center thumb-md bg-light-alt rounded-circle mx-auto">
+                                                        <i class="ti ti-confetti font-24 align-self-center text-muted"></i>
+                                                    </div>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                        </div><!--end card-body-->
+                                    </div><!--end card-->
+                                </div> <!--end col-->
+                            </div>

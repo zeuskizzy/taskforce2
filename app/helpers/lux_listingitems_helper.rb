@@ -1,0 +1,2 @@
+module LuxListingitemsHelper
+end

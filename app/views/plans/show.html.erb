@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @plan.amount %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @plan.name %>
+</p>
+
+<p>
+  <strong>Referal:</strong>
+  <%= @plan.referal %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @plan.duration %>
+</p>
+
+<p>
+  <strong>Plan:</strong>
+  <%= @plan.plan %>
+</p>
+
+<p>
+  <strong>Plan name:</strong>
+  <%= @plan.plan_name %>
+</p>
+
+<p>
+  <strong>Mini:</strong>
+  <%= @plan.mini %>
+</p>
+
+<p>
+  <strong>Maxi:</strong>
+  <%= @plan.maxi %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @plan.body %>
+</p>
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

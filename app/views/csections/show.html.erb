@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @csection.title %>
+</p>
+
+<p>
+  <strong>Sub title:</strong>
+  <%= @csection.sub_title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @csection.body %>
+</p>
+
+<p>
+  <strong>Csecctionimg:</strong>
+  <%= @csection.csecctionimg %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @csection.slug %>
+</p>
+
+<%= link_to 'Edit', edit_csection_path(@csection) %> |
+<%= link_to 'Back', csections_path %>

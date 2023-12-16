@@ -1,0 +1,62 @@
+<!-- Start Page Banner -->
+
+<% @headers.each do |a| %>
+<div class="page-banner-area">
+    <div class="container">
+        <div class="page-banner-content">
+            <h2><%= a.products_title %>  </h2>
+
+            <ul class="pages-list">
+                <li><%= link_to root_path, "Home" %>/li>
+                <li><span><%= a.products_title %></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<% end %>
+<!-- End Page Banner -->
+
+
+
+<% if LuxListingitem.exists? %>
+
+
+<section class="team-area bg-ffffff pt-100 pb-70">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>Luxury Brands  </h2>
+
+                    <div class="section-btn">
+
+                    </div>
+                </div>
+
+                <div class="row">
+                  <% @luxListingitems.each do |a| %>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single-team">
+                          <img src="<%= a.luximg_url.to_s %>" alt="image">
+
+                            <div class="team-content">
+                                <h3><%= link_to a.title, a %></h3>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                <% end %>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <% else %>
+        <% end %>
+
+        <%= render "shared/partners" %>
+        <%= render "shared/reviews" %>

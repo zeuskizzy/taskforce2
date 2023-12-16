@@ -1,0 +1,37 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  luximg: MyString
+  iframelink: MyString
+  mileage: MyString
+  bodytype: MyString
+  doors: MyString
+  engine: MyString
+  transmission: MyString
+  drivetrain: MyString
+  exteriorcolor: MyString
+  interiorcolor: MyString
+  condition: MyString
+  feul: MyString
+  title: MyString
+  slug: MyString
+  listingcat: MyString
+  references: MyString
+
+two:
+  luximg: MyString
+  iframelink: MyString
+  mileage: MyString
+  bodytype: MyString
+  doors: MyString
+  engine: MyString
+  transmission: MyString
+  drivetrain: MyString
+  exteriorcolor: MyString
+  interiorcolor: MyString
+  condition: MyString
+  feul: MyString
+  title: MyString
+  slug: MyString
+  listingcat: MyString
+  references: MyString

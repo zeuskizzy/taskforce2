@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%  @welcomes = Welcome.all  %>
+  <% @welcomes.take(1).each do |w| %>
+  <title><%= w.title %>  || Authentication </title>
+  <meta name="description" content="<%= w.desc %>">
+  <% end %>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= stylesheet_link_tag    'accounts', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <%= javascript_include_tag 'accounts', 'data-turbolinks-track': 'reload' %>
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+  }
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</head>
+
+<body>
+  <%   @abouts = About.all %>
+    <%   @headers = Header.all %>
+    <%   @services = Service.all %>
+    <%   @welcomes = Welcome.all %>
+
+
+  <% unless flash.empty? %>
+  <script type="text/javascript">
+    <% flash.each do |f| %>
+    <% type = f[0].to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+    toastr['<%= type %>']('<%= f[1] %>');
+    <% end %>
+  </script>
+  <% end %>
+
+  <% @welcomes = Welcome.all %>
+  <div class="auth-full-height container d-flex flex-column justify-content-center">
+      <div class="row justify-content-center">
+          <div class="col-md-9">
+              <div class="card row mx-0 flex-row overflow-hidden">
+
+
+
+<% if Welcome.exists? %>
+<% @headers.take(1).each do |h| %>
+<div class="col-md-4 bg-size-cover d-flex align-items-center p-4" style="background-image: url(<%= h.headerimg_url.to_s %>);">
+    <div>
+        <div class="mb-5">
+            <div class="logo">
+                <img alt="logo" class="img-fluid" src="<%= h.adminlogoimg_url.to_s %>" style="height: 50px;">
+            </div>
+        </div>
+        <h3 class="text-white"><%= h.admin_title %></h3>
+        <p class="text-white mt-4 mb-5 o-75"><%= h.admin_sub_title %>.</p>
+    </div>
+</div>
+<% end %>
+
+<% else %>
+<div class="col-md-4 bg-size-cover d-flex align-items-center p-4" style="background-image: url('assets/images/others/bg-2.jpg');">
+    <div>
+        <div class="mb-5">
+            <div class="logo">
+                <img alt="logo" class="img-fluid" src="assets/images/logo/logo-white.png" style="height: 50px;">
+            </div>
+        </div>
+        <h3 class="text-white">Make your work easier</h3>
+        <p class="text-white mt-4 mb-5 o-75">Climb leg rub face on everything give attitude under the bed.</p>
+    </div>
+</div>
+
+<% end %>
+<div class="col-md-8 px-0">
+    <div class="card-body">
+
+  <%= yield %>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+  <%= javascript_include_tag 'app.min' %>
+
+</body>
+</html>

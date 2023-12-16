@@ -1,0 +1,187 @@
+<!-- Start Page Banner -->
+<div class="page-banner-area">
+    <div class="container">
+        <div class="page-banner-content">
+            <h2>Vehicle Categories</h2>
+
+            <ul class="pages-list">
+                <li><a href="#">Home</a></li>
+                <li><span>Our Fleet</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+<% if LuxListingitem.exists? %>
+
+<section class="car-ranking-area bg-ffffff pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>OUR LUXURY CATEGORIES</h2>
+            <p>Look at the best cars in the ranking</p>
+
+            <div class="section-btn">
+              <%= link_to lux_listingitems_path, class: "default-btn" do %>
+              View all
+              <% end %>
+
+            </div>
+        </div>
+
+        <div class="row">
+
+            <% @luxListingitems.each do |a| %>
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-car-ranking">
+                    <div class="car-ranking-image">
+                      <%= link_to a do %>
+                          <img src="<%= a.luximg_url.to_s  %>" alt="image">
+                        <% end %>
+
+                        <div class="icon">
+                            <a href="car-details.html">
+                                <i class="flaticon-gallery"> 5</i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="car-ranking-content">
+                        <div class="tag">In Stock</div>
+                        <h3>
+
+                            <%= link_to a do %>
+                            <%= a.title %>
+                            <% end %>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <% end %>
+
+
+        </div>
+    </div>
+</section>
+<% else %>
+
+<section class="car-ranking-area bg-ffffff pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>BEST CAR RANKINGS</h2>
+            <p>Look at the best cars in the ranking</p>
+
+            <div class="section-btn">
+                <a href="#" class="default-btn">
+                    View All
+                    <span></span>
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-car-ranking">
+                    <div class="car-ranking-image">
+                        <a href="car-details.html"><img src="<%= asset_path "car-ranking/car-ranking-1.jpg" %>" alt="image"></a>
+
+                        <div class="icon">
+                            <a href="car-details.html">
+                                <i class="flaticon-gallery"> 5</i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="car-ranking-content">
+                        <div class="tag">$25,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 MAZDA CX-30</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 3 Miles, Orland Park</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-car-ranking">
+                    <div class="car-ranking-image">
+                        <a href="car-details.html"><img src="<%= asset_path "car-ranking/car-ranking-2.jpg" %>" alt="image"></a>
+
+                        <div class="icon">
+                            <a href="car-details.html">
+                                <i class="flaticon-gallery"> 3</i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="car-ranking-content">
+                        <div class="tag">$49,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 SUBARU XC-60</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 7 Miles, Blauvelt, NY</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-car-ranking">
+                    <div class="car-ranking-image">
+                        <a href="car-details.html"><img src="<%= asset_path "car-ranking/car-ranking-3.jpg"%>" alt="image"></a>
+
+                        <div class="icon">
+                            <a href="car-details.html">
+                                <i class="flaticon-gallery"> 4</i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="car-ranking-content">
+                        <div class="tag">$55,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 NISSAN XX-50</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 2 Miles, Blauvelt, NY</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-car-ranking">
+                    <div class="car-ranking-image">
+                        <a href="car-details.html"><img src="<%= asset_path "car-ranking/car-ranking-4.jpg"%>" alt="image"></a>
+
+                        <div class="icon">
+                            <a href="car-details.html">
+                                <i class="flaticon-gallery"> 2</i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="car-ranking-content">
+                        <div class="tag">$75,000</div>
+                        <h3>
+                            <a href="car-details.html">2021 KIA SOUL XC 60</a>
+                        </h3>
+                        <p><b>MILEAGES</b> 9 Miles, Bardonia</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<% end %>
+<%= render "shared/models" %>
+
+
+<div class="car-shop-area ptb-100">
+    <div class="container">
+
+
+        <div class="row">
+<%= render "shared/listingscats" %>
+</div>
+</div>
+</div>

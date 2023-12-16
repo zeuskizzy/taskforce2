@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  v_debt: MyString
+  repo_time: 2023-06-19 15:57:55
+  repo_plan: MyString
+  v_name: MyString
+  v_type: MyString
+  v_info: MyString
+  v_model: MyString
+  status: 
+  user: one
+  slug: MyString
+  pk_address: MyString
+  d_address: MyString
+  phone: MyString
+  vrepoimg: MyString
+
+two:
+  v_debt: MyString
+  repo_time: 2023-06-19 15:57:55
+  repo_plan: MyString
+  v_name: MyString
+  v_type: MyString
+  v_info: MyString
+  v_model: MyString
+  status: 
+  user: two
+  slug: MyString
+  pk_address: MyString
+  d_address: MyString
+  phone: MyString
+  vrepoimg: MyString

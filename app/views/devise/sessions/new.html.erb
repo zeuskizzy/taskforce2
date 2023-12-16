@@ -1,0 +1,35 @@
+<div class="row y-gap-20">
+
+  <div class="col-12">
+    <h1 class="text-22 fw-500">Welcome Back!</h1>
+    <p class="mt-10">Don't have an account yet?
+      <%= link_to new_user_registration_path, class: "text-blue-1" do %> Sign Up For Free<% end %>
+  </div>
+
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<div class="col-12">
+
+  <div class="form-input row col-12">
+        <%= f.input :email,
+                required: false,
+                autofocus: true,
+                input_html: { autocomplete: "email" }, class: "lh-1 text-14 text-light-1 row col-12" %>
+
+  </div>
+  <div class="form-input row col-12">
+
+    <%= f.input :password,
+                required: false,
+                input_html: { autocomplete: "current-password" }, class: "lh-1 text-14 text-light-1 row col-12" %>
+  </div>
+
+  </div>
+
+  <div class="form-input row col-12">
+    <%= f.button :submit, "Sign In", class: "button py-20 -dark-1 bg-blue-1 text-white col-12" do %>   <div class="icon-arrow-top-right ml-15"> <% end %>
+  </div>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+</div>

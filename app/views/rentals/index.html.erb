@@ -1,0 +1,23 @@
+<div class="page-banner-area">
+    <div class="container">
+
+      <% @headers.each do |a| %>
+        <div class="page-banner-content">
+          <h2><%= a.projects_title %></h2>
+          <p><%= a.projects_sub_title %></p>
+
+            <ul class="pages-list">
+                <li><a href="#">Home</a></li>
+                <li><span><%= a.projects_title %></span></li>
+            </ul>
+        </div>
+        <% end %>
+    </div>
+</div>
+
+<%= render "shared/rentals" %>
+
+<%= render "shared/hows" %>
+
+<%= render "shared/partners" %>
+<%= render "shared/reviews" %>

@@ -1,0 +1,45 @@
+
+
+<div class="page-banner-area" style="background-image: url('<%= @rental.rentalheaderimg_url.to_s %>')" >
+    <div class="container">
+        <div class="page-banner-content">
+            <h2><%= @rental.title %></h2>
+
+            <ul class="pages-list">
+                <li><a href="#">Home</a></li>
+                <li><span><%= @rental.title %></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<section class="about-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-image">
+                    <img src="<%= @rental.rentalimg_url.to_s %>" alt="image">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="title">
+                        <h3> <%= @rental.title %></h3>
+                        <span><%= @rental.sub_title %></span>
+                    </div>
+                    <p>  <%= @rental.address %>
+</p>
+<%= link_to new_contact_path, class: "default-btn" do %>
+
+  Book Now <div class="icon-arrow-top-right ml-15"></div>
+<% end %>
+
+                  </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%= render "shared/reviews" %>
+<%= render "shared/services" %>

@@ -1,0 +1,68 @@
+
+
+<div class="page-banner-area">
+    <div class="container">
+        <div class="page-banner-content">
+            <h2><%= @service.title %></h2>
+
+            <ul class="pages-list">
+                <li><a href="#">Home</a></li>
+                <li><span><%= @service.title %></span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- Start About Area -->
+<section class="about-area ptb-100">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-image">
+                    <img src="<%= @service.serviceimg_url.to_s %>" alt="image">
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <div class="title">
+                        <h3> <%= @service.title %></h3>
+                        <span><%= @service.sub_title %></span>
+                    </div>
+                    <p><%= raw(@service.body) %></p>
+                        </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End About Area -->
+
+<% if @service.sections.exists? %>
+<section class="blog-area pt-100 pb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>How It Works </h2>
+            <p>A Quick Guide on <%= @service.title %></p>
+
+            <div class="section-btn">
+              <%= link_to sections_path, class: "default-btn" do %>
+                    Goto Help Center
+                    <span></span>
+                <% end %>
+            </div>
+        </div>
+
+      <div class="row">
+
+        <%= render partial: 'services/section', collection: @service.sections %>
+
+</div>
+
+</div>
+</section>
+<% else %>
+<%= render "shared/hows" %>
+<% end %>
+
+<%= render "shared/reviews" %>
+<%= render "shared/services" %>

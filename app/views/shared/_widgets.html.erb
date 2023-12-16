@@ -1,0 +1,55 @@
+<div class="col-lg-4 col-md-12">
+    <aside class="widget-area">
+        <div class="widget widget_search">
+            <form class="search-form">
+                <label>
+                    <span class="screen-reader-text">Search for:</span>
+                    <input type="search" class="search-field" placeholder="Search...">
+                </label>
+                <button type="submit">
+                    <i class='bx bx-search-alt'></i>
+                </button>
+            </form>
+        </div>
+
+        <div class="widget widget_mund_posts_thumb">
+            <h3 class="widget-title">Our Services</h3>
+
+            <% @services.each do |a| %>
+
+            <article class="item">
+                <!-- <a href="#" class="thumb">
+                    <span class="fullimage cover bg1" role="img"></span>
+                </a> -->
+                <div class="info">
+                    <h4 class="title usmall"><%= link_to a do %><%= a.title %><% end %>></h4>
+                </div>
+            </article>
+            <% end %>
+
+
+        </div>
+
+        <div class="widget widget_categories">
+            <h3 class="widget-title">Categories</h3>
+
+            <ul>
+              <% @listingcats.each do |a| %>
+                <li><%= link_to a do %><%= a.title %><% end %></li>
+                <% end %>
+                  </ul>
+        </div>
+
+        <div class="widget widget_tag_cloud">
+            <h3 class="widget-title">About Us</h3>
+
+            <div class="tagcloud">
+              <ul>
+                <% @abouts.each do |a| %>
+                  <li><%= link_to a do %><%= a.title %><% end %></li>
+                  <% end %>
+                    </ul>
+            </div>
+        </div>
+    </aside>
+</div>

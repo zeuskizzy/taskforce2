@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fimg:</strong>
+  <%= @feature.fimg %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @feature.title %>
+</p>
+
+<p>
+  <strong>Sub title:</strong>
+  <%= @feature.sub_title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @feature.body %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @feature.slug %>
+</p>
+
+<%= link_to 'Edit', edit_feature_path(@feature) %> |
+<%= link_to 'Back', features_path %>

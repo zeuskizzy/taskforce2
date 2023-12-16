@@ -1,0 +1,30 @@
+databases:
+  - name: favis
+    databaseName: favis
+    user: favis
+
+services:
+  - type: web
+    name: favis
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: favis
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: AWS_REGION # Imported from Heroku app
+        value: us-east-2
+      - key: AWS_ACCESS_KEY_ID
+         value: <%= ENV['AWS_ACCESS_KEY_ID'] %> # Imported from Heroku app
+      - key: AWS_SECRET_ACCESS_KEY
+        value: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
+
+    # -type: redis
+    #  name: redis
+    #  ipAllowList: []
+    #  plan: free
+    #  maxmemoryPolicy: noeviction

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @rentalproduct.title %>
+</p>
+
+<p>
+  <strong>Sub title:</strong>
+  <%= @rentalproduct.sub_title %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @rentalproduct.desc %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @rentalproduct.body %>
+</p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @rentalproduct.slug %>
+</p>
+
+<p>
+  <strong>Rental:</strong>
+  <%= @rentalproduct.rental_id %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @rentalproduct.price %>
+</p>
+
+<p>
+  <strong>Discount:</strong>
+  <%= @rentalproduct.discount %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @rentalproduct.location_id %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @rentalproduct.service_id %>
+</p>
+
+<%= link_to 'Edit', edit_rentalproduct_path(@rentalproduct) %> |
+<%= link_to 'Back', rentalproducts_path %>

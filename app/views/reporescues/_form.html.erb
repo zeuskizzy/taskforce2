@@ -1,0 +1,70 @@
+
+<%= simple_form_for(@reporescue) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="row y-gap-20">
+
+    <div class="col-12">
+      <h1 class="text-22 fw-500">Repo Information</h1>
+      <p class="mt-10">Please fill out the required Information </p>
+    </div>
+
+
+    <div class="form-input row col-12">
+      <%= f.input :v_debt, label: "Vehicle Debt Size", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+    </div>
+    <div class="form-inputs row col-12">
+      <%= f.input :repo_time %>
+
+    </div>
+    <div class="form-input row col-6">
+      <%= f.input :repo_plan, label: "Repo Plan", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+    </div>
+    <div class="form-input row col-6">
+      <%= f.input :phone, label: "Company Phone", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+    </div>
+</div>
+
+
+
+<div class="row y-gap-20">
+
+  <div class="col-12">
+    <h1 class="text-22 fw-500">Vehicle Information</h1>
+    <p class="mt-10">Please fill out the required Information </p>
+  </div>
+  <div class="form-input row col-12">
+    <%= f.input :v_name, label: "Vehicle Name", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+  </div>
+  <div class="form-input row col-6">
+    <%= f.input :v_type, label: "Vehicle Type", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+  </div>
+  <div class="form-input row col-6">
+    <%= f.input :v_model, label: "Vehicle Model", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+  </div>
+  <div class="form-input row col-6">
+    <%= f.input :pk_address, label: "Pick-Up Address", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+  </div>
+  <div class="form-input row col-6">
+    <%= f.input :d_address, label: "Delivery Address", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+  </div>
+  <div class="form-input row col-12">
+    <%= f.input :v_info, label: "Vehicle Information", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+  </div>
+  </div>
+
+
+  <div class="form-input row col-12">
+    <%= f.button :submit, " Request Rescue", class: "button py-20 -dark-1 bg-blue-1 text-white col-12" do %>   <div class="icon-arrow-top-right ml-15"> <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,63 @@
+<!-- Start Page Banner -->
+<div class="page-banner-area item-bg-2">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-banner-content">
+                    <h2>  <%= @blog.title %></h2>
+
+                    <ul class="pages-list">
+                        <li><a href="#">Home</a></li>
+                        <li><span>  <%= @blog.title %></span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner -->
+<section class="blog-details-area ptb-100">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-12">
+              <div class="blog-details-desc">
+                  <div class="article-content-box">
+                      <img src="<%= @blog.blogimg_url.to_s %>" alt="image">
+
+                      <div class="article-content">
+                          <div class="tag">News</div>
+                          <h3>
+                              <a href="#"><%= @blog.title %></a>
+                          </h3>
+                          <div class="entry-meta">
+                              <ul>
+                                  <li>
+                                      <i class='bx bx-user'></i>
+                                      By: <a href="#">Admin</a>
+                                  </li>
+                                  <li>
+                                      <i class='bx bx-calendar-event'></i>
+                                      <a href="#"><%= @blog.created_at %>1</a>
+                                  </li>
+
+                              </ul>
+                          </div>
+
+                          <blockquote class="wp-block-quote">
+                              <p>“<%= @blog.sub_title %>”</p>
+                          </blockquote>
+
+                          <p><%= raw(@blog.body) %>.</p>
+
+
+                      </div>
+                  </div>
+
+
+              </div>
+          </div>
+
+          <%= render "shared/widgets" %>
+        </div>
+    </div>
+    </section>

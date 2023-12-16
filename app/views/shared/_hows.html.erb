@@ -1,0 +1,94 @@
+
+
+<% if Feature.exists? %>
+<section class=" choose-area ptb-100">
+  <div data-anim-wrap="" class="container animated">
+    <div data-anim-child="slide-up delay-1" class="row y-gap-30 is-in-view">
+
+      <% @headers.take(1).each do |a| %>
+      <div class="col-xl-4 col-lg-5">
+        <h2 class="text-30 fw-600"><%= a.features_title %></h2>
+        <p class="text-dark-1 mt-40 sm:mt-20"><%= a.features_sub_title %>.</p>
+
+        <div class="d-inline-block mt-40 sm:mt-20">
+
+          <%= link_to new_vehicle_path, class: "default-btn" do %>
+
+            Submit Your Vehicle to get 50% off<div class="icon-arrow-top-right ml-15"></div>
+          <% end %>
+
+        </div>
+      </div>
+
+      <% end %>
+
+      <div class="col-xl-6 offset-xl-1 col-lg-7">
+        <div class="row y-gap-60">
+
+            <% @features.each do |a| %>
+          <div data-anim-child="slide-up delay-3" class="col-sm-6 is-in-view">
+            <h5 class="text-18 fw-500 mt-10"><%= a.title %></h5>
+            <p class="mt-10"><%= a.sub_title %></p>
+          </div>
+
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% else %>
+    <section class=" choose-area ptb-100">
+      <div data-anim-wrap="" class="container animated">
+        <div data-anim-child="slide-up delay-1" class="row y-gap-30 is-in-view">
+          <div class="col-xl-4 col-lg-5">
+            <h2 class="text-30 fw-600">How It Works</h2>
+            <p class="mt-5">hosting is a simple and efficient way to share your car with others and earn money in the process</p>
+
+            <p class="text-dark-1 mt-40 sm:mt-20">We simplify the entire hosting process by handling insurance, payments, and customer support, allowing you to focus on sharing your car and maximizing your earnings.</p>
+
+            <div class="d-inline-block mt-40 sm:mt-20">
+
+              <%= link_to new_vehicle_path, class: "button -md -blue-1 bg-yellow-1 text-dark-1" do %>
+
+                Submit Your Vehicle <div class="icon-arrow-top-right ml-15"></div>
+              <% end %>
+
+            </div>
+          </div>
+
+          <div class="col-xl-6 offset-xl-1 col-lg-7">
+            <div class="row y-gap-60">
+
+              <div data-anim-child="slide-up delay-3" class="col-sm-6 is-in-view">
+                <img src="<%= asset_path 'featureIcons/3/1.svg' %>" alt="image" class="size-60">
+                <h5 class="text-18 fw-500 mt-10">Sign Up</h5>
+                <p class="mt-10">Rev up your earning potential and join The Favis today</p>
+              </div>
+
+              <div data-anim-child="slide-up delay-4" class="col-sm-6 is-in-view">
+                <img src="<%= asset_path 'featureIcons/3/2.svg'%>" alt="image" class="size-60">
+                <h5 class="text-18 fw-500 mt-10">List Your Car</h5>
+                <p class="mt-10">Provide accurate details about your vehicle, including its make, model, year, location, availability, and pricing.</p>
+              </div>
+
+              <div data-anim-child="slide-up delay-5" class="col-sm-6 is-in-view">
+                <img src="<%= asset_path 'featureIcons/3/3.svg' %>" alt="image" class="size-60">
+                <h5 class="text-18 fw-500 mt-10">Vehicle Hand-off</h5>
+                <p class="mt-10"> Once a booking is confirmed, coordinate with the guest to arrange the pickup location and time..</p>
+              </div>
+
+              <div data-anim-child="slide-up delay-6" class="col-sm-6 is-in-view">
+                <img src="<%= asset_path 'featureIcons/3/4.svg' %>" alt="image" class="size-60">
+                <h5 class="text-18 fw-500 mt-10">Earn Moneyy & Earn Bonuses</h5>
+                <p class="mt-10"> After the rental is completed, you'll receive payment from The Favis for the rental period.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <% end %>

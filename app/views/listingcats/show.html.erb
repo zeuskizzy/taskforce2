@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @listingcat.title %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @listingcat.status %>
+</p>
+
+<%= link_to 'Edit', edit_listingcat_path(@listingcat) %> |
+<%= link_to 'Back', listingcats_path %>

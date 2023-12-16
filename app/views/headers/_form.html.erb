@@ -1,0 +1,31 @@
+
+<%= simple_form_for(@header) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :abouts_title %>
+    <%= f.input :abouts_sub_title %>
+    <%= f.input :services_title %>
+    <%= f.input :services_sub_title %>
+    <%= f.input :boards_title %>
+    <%= f.input :boards_sub_title %>
+    <%= f.input :features_title %>
+    <%= f.input :features_sub_title %>
+    <%= f.input :feedbacks_title %>
+    <%= f.input :feedbacks_sub_title %>
+    <%= f.input :blogs_title %>
+    <%= f.input :blogs_sub_title %>
+    <%= f.input :projects_title %>
+    <%= f.input :projects_sub_title %>
+    <%= f.input :cta1 %>
+    <%= f.input :cta2 %>
+    <%= f.input :headerimg %>
+    <%= f.input :products_title %>
+    <%= f.input :products_sub_title %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,73 @@
+<div class="row y-gap-20">
+
+  <div class="col-12">
+    <h1 class="text-22 fw-500">Sign in or create an account</h1>
+    <p class="mt-10">Already have an account?
+      <%= link_to new_user_session_path, class: "text-blue-1" do %> Log In <% end %>
+  </div>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="col-12">
+
+    <div class="form-input row col-12">
+      <%= f.input :username,
+                  required: true, class: "form-control",
+                  autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"}%>
+
+      </div>
+
+  <div class="form-input row col-12">
+    <%= f.input :email,
+                required: true, class: "lh-1 text-14 text-light-1 row col-12",
+                autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"},
+                input_html: { autocomplete: "email" }%>
+
+    </div>
+
+    </div>
+
+    <div class="col-12">
+
+        <div class="form-input row col-12 ">
+
+    <%= f.input :password,
+                required: true, :label_html => {:class => "lh-1 text-14 text-light-1"},
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" }, class: "lh-1 text-14 text-light-1 col-12" %>
+    </div>
+    </div>
+
+
+
+
+
+  <div class="col-12">
+
+  <div class="form-input row col-12">
+
+    <%= f.input :password_confirmation,
+                required: true, :label_html => {:class => "lh-1 text-14 text-light-1"},
+                input_html: { autocomplete: "new-password", class: "lh-1 text-14 text-light-1 col-12" } %>
+  </div>
+  <div class="form-input row col-12">
+    <%= f.input :phone,
+                required: true, class: "lh-1 text-14 text-light-1 row col-12", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+    </div>
+    <div class="form-input row col-12">
+      <%= f.input :referal, class: "lh-1 text-14 text-light-1 row col-12", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+      </div>
+  </div>
+
+
+  <div class="form-input row col-12">
+    <%= f.button :submit, " Register", class: "button py-20 -dark-1 bg-blue-1 text-white col-12" do %>   <div class="icon-arrow-top-right ml-15"> <% end %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>

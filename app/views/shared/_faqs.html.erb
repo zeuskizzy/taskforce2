@@ -1,0 +1,130 @@
+
+
+    <% if Faq.exists? %>
+
+    <!-- Start FAQ Area -->
+    <section class="faq-area ptb-100">
+        <div class="section-title">
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+            <p>Certainly, here are some frequently asked questions (FAQs) that customers often have when considering an online car dealership for vehicle purchases:</p>
+        </div>
+
+        <div class="container">
+            <div class="faq-accordion">
+                <div class="accordion">
+                  <% @faqs.each do |a| %>
+                    <div class="accordion-item">
+                        <div class="accordion-title ">
+                            <i class='bx bx-plus'></i>
+                            <%= a.title %>?
+                        </div>
+
+                        <div class="accordion-content show">
+                          <p><%= raw(a.body) %></p>
+                              </div>
+                    </div>
+                    <% end %>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End FAQ Area -->
+    <% else %>
+
+
+    <!-- Start FAQ Area -->
+    <section class="faq-area ptb-100">
+        <div class="section-title">
+            <h2>FREQUENTLY ASKED QUESTIONS</h2>
+        </div>
+
+        <div class="container">
+            <div class="faq-accordion">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <div class="accordion-title active">
+                            <i class='bx bx-plus'></i>
+                            How much time does it take to get approval?
+                        </div>
+
+                        <div class="accordion-content show">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <i class='bx bx-plus'></i>
+                            Can I add images to a free listing?
+                        </div>
+
+                        <div class="accordion-content">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <i class='bx bx-plus'></i>
+                            What does it cost to ship a vehicle?
+                        </div>
+
+                        <div class="accordion-content">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <i class='bx bx-plus'></i>
+                            Can I modify a submitted Directory Listing?
+                        </div>
+
+                        <div class="accordion-content">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <i class='bx bx-plus'></i>
+                            Do you offer any sort of warranty?
+                        </div>
+
+                        <div class="accordion-content">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <i class='bx bx-plus'></i>
+                            Is my car insured by the auto transport company?
+                        </div>
+
+                        <div class="accordion-content">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-title">
+                            <i class='bx bx-plus'></i>
+                            How do I contact the companies in the directory?
+                        </div>
+
+                        <div class="accordion-content">
+                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End FAQ Area -->
+
+    <% end %>
