@@ -80,6 +80,4 @@ development:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
-  database: mundcars_production
-  username: mundcars
-  password: <%= ENV['MUNDCARS_DATABASE_PASSWORD'] %>
+  database: taskforce
