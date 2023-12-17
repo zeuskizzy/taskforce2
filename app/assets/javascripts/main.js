@@ -346,7 +346,7 @@ function setTheme(themeName) {
 // function to toggle between light and dark theme
 function toggleTheme() {
     if (localStorage.getItem('mund_theme') === 'theme-dark') {
-        setTheme('theme-dark');
+        setTheme('theme-light');
     } else {
         setTheme('theme-dark');
     }
@@ -357,7 +357,7 @@ function toggleTheme() {
         setTheme('theme-dark');
         document.getElementById('slider').checked = false;
     } else {
-        setTheme('theme-dark');
+        setTheme('theme-light');
       document.getElementById('slider').checked = true;
     }
 })();
