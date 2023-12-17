@@ -2,6 +2,7 @@ databases:
   - name: taskforce
     databaseName: taskforce
     user: taskforce
+    plan: free
 
 services:
   - type: web
