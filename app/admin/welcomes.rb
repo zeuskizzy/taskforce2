@@ -5,7 +5,7 @@ ActiveAdmin.register Welcome do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-   permit_params :title, :logoimg, :desc, :whatsapp, :ig, :ln, :section, :link, :footer, :phone, :address, :twitter, :email, :youtube, :telegram
+   permit_params :title, :logoimg, :desc, :whitelogoimg, :whatsapp, :ig, :ln, :section, :link, :footer, :phone, :address, :twitter, :email, :youtube, :telegram
   #
   # or
   #
@@ -18,6 +18,8 @@ ActiveAdmin.register Welcome do
      f.inputs do
       f.input :address, placeholder: "address"
       f.input :logoimg, :as => :file
+      f.input :whitelogoimg, :as => :file
+
       f.input :footer, placeholder: "footer description email", label: "email"
       f.input :phone, placeholder: "phone"
       f.input :email, placeholder: "Email address"
