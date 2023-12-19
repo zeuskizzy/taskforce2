@@ -1,5 +1,22 @@
 
 <% if Banner.exists? %>
+<!-- Start Main Banner Area -->
+<% @banners.each do |b| %>
+
+<div class="main-banner-with-category">
+    <div class="main-banner-item" style="background-image:url(<%= b.bannerimg_url.to_s %>) !important;">
+        <div class="container">
+            <div class="main-banner-content" >
+                <h1><%= b.title %></h1>
+                <p><%= b.sub_title %></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<% end %>
+<!-- End Main Banner Area -->
+
 
 <% else %>
 
