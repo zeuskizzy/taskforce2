@@ -6,7 +6,7 @@
             <div class="col-lg-6">
               <% @headers.take(1).each do |a| %>
                 <div class="about-image">
-                    <img src="<%= asset_path "about-us.jpg"%>" alt="image">
+                    <img src="<%= a.abtsectionimg_url.to_s %>" alt="image">
                 </div>
             </div>
 
