@@ -22,6 +22,8 @@ ActiveAdmin.register Header do
 
       para "headerimg login or signup"
       f.input :headertext, placeholder: "Mast Header Title"
+      f.input :headerimg, as: :file
+
 
       para "abouts/who we are"
       f.input :abouts_title, placeholder: "About Us Header Title"
@@ -30,7 +32,7 @@ ActiveAdmin.register Header do
       f.input :abtsectionimg, as: :file
 
 
-      para "Services"
+      para "Services/brand"
 
       f.input :services_title
       f.input :services_sub_title
