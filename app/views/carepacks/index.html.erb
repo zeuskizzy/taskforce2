@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carepacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Leave package</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Military</th>
+      <th>Status</th>
+      <th>Verified</th>
+      <th>Slug</th>
+      <th>Message</th>
+      <th>Date</th>
+      <th>Price</th>
+      <th>Duration</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carepacks.each do |carepack| %>
+      <tr>
+        <td><%= carepack.leave_package %></td>
+        <td><%= carepack.name %></td>
+        <td><%= carepack.email %></td>
+        <td><%= carepack.phone %></td>
+        <td><%= carepack.military_id %></td>
+        <td><%= carepack.status %></td>
+        <td><%= carepack.verified %></td>
+        <td><%= carepack.slug %></td>
+        <td><%= carepack.message %></td>
+        <td><%= carepack.date %></td>
+        <td><%= carepack.price %></td>
+        <td><%= carepack.duration %></td>
+        <td><%= carepack.user_id %></td>
+        <td><%= link_to 'Show', carepack %></td>
+        <td><%= link_to 'Edit', edit_carepack_path(carepack) %></td>
+        <td><%= link_to 'Destroy', carepack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carepack', new_carepack_path %>

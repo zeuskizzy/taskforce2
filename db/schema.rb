@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_11_17_212740) do
+ActiveRecord::Schema.define(version: 2024_02_10_173046) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,42 @@ ActiveRecord::Schema.define(version: 2023_11_17_212740) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["slug"], name: "index_boards_on_slug"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "title"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.integer "rentalproduct_id"
+    t.boolean "status"
+    t.bigint "user_id", null: false
+    t.string "email"
+    t.string "phone"
+    t.string "desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "carepacks", force: :cascade do |t|
+    t.string "leave_package"
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "military_id"
+    t.boolean "status"
+    t.boolean "verified"
+    t.string "slug"
+    t.string "message"
+    t.datetime "date"
+    t.string "price"
+    t.string "duration"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slug"], name: "index_carepacks_on_slug"
+    t.index ["user_id"], name: "index_carepacks_on_user_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -247,6 +283,7 @@ ActiveRecord::Schema.define(version: 2023_11_17_212740) do
     t.string "references"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "luximg2"
     t.index ["slug"], name: "index_lux_listingitems_on_slug"
   end
 
@@ -291,6 +328,7 @@ ActiveRecord::Schema.define(version: 2023_11_17_212740) do
     t.string "body"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "optionclass"
     t.index ["slug"], name: "index_rentals_on_slug"
   end
 
@@ -440,9 +478,12 @@ ActiveRecord::Schema.define(version: 2023_11_17_212740) do
     t.string "telegram"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "whitelogoimg"
   end
 
   add_foreign_key "accounts", "users"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "carepacks", "users"
   add_foreign_key "reporepairs", "users"
   add_foreign_key "reporescues", "users"
   add_foreign_key "sections", "services"

@@ -187,20 +187,12 @@
                                                             <span>DashBoard</span>
 
                                                         <% end %>
-                                                        <%= link_to vehicles_path, class: "dropdown-item"   do %>
 
-                                                        <a href="register.html" class="dropdown-item">
-                                                            <span>My Wishlists</span>
-                                                        </a>
-                                                        <% end %>
-                                                        <%= link_to reporepairs_path, class: "dropdown-item" do %>
-                                                            <span>Repair Rescue</span>
-                                                        <% end %>
                                                     </div>
                                                 </div>
                                             </div>
             <div class="option-item">
-              <%= link_to new_vehicle_path, class: "navbar-btn" do %>
+              <%= link_to new_carepack_path, class: "navbar-btn" do %>
                 Submit An Order
               <% end %>
             </div>
@@ -208,7 +200,7 @@
 
             <div class="option-item">
               <%= link_to new_user_registration_path, class: "navbar-btn" do %>
-                Sign Up
+                Emergency Leave Application
               <% end %>
             </div>
             <% end %>

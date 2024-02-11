@@ -1,0 +1,25 @@
+
+<%= simple_form_for(@carepack) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :leave_package %>
+    <%= f.input :name %>
+    <%= f.input :email %>
+    <%= f.input :phone %>
+    <%= f.input :military_id %>
+    <%= f.input :status %>
+    <%= f.input :verified %>
+    <%= f.input :slug %>
+    <%= f.input :message %>
+    <%= f.input :date %>
+    <%= f.input :price %>
+    <%= f.input :duration %>
+    <%= f.association :user %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

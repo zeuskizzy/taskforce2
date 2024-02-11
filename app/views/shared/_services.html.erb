@@ -27,14 +27,16 @@
 
             <div class="col-lg-5">
                 <div class="choose-image">
-                    <img src="<%= asset_path "choose/choose-1.jpg" %>" alt="image">
+                    <img src="<%= asset_path "choose/choose-1.png" %>" alt="image">
 
                     <div class="image-box">
-                        <img src="<%= asset_path "choose/choose-2.jpg" %>" alt="image">
+                        <img src="<%= asset_path "choose/choose-2.png" %>" alt="image">
+                        <% @headers.take(1).each do |a| %>
 
-                        <a href="https://www.youtube.com/watch?v=nzm2GDQw9kE" class="video-btn popup-youtube">
+                        <a href="<%= a.services_videolink %>" class="video-btn popup-youtube">
                             <i class='bx bx-play' ></i>
                         </a>
+                        <% end %>
                     </div>
                 </div>
             </div>
