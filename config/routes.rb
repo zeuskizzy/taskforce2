@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :leaveapps
   resources :carepacks
   resources :bookings
   resources :rentals do

@@ -17,68 +17,63 @@
                 <span class="nav-menu-item-title">Dashboard</span>
             <% end %>
         </li>
-        <li class="nav-group-title">Vehicles</li>
+        <li class="nav-group-title">Accounts</li>
         <li class="nav-menu-item">
-          <%= link_to vehicles_path do %>
+          <%= link_to accounts_path do %>
 
                 <i class="feather icon-mail"></i>
-                <span class="nav-menu-item-title">Co-Hosts</span>
-            <% end %>
-        </li>
-        <li class="nav-menu-item">
-          <%= link_to new_vehicle_path do %>
-                <i class="feather icon-message-circle"></i>
-                <span class="nav-menu-item-title">Add Vehicles</span>
+                <span class="nav-menu-item-title">My Account</span>
             <% end %>
         </li>
 
-        <li class="nav-group-title">Repo Rescue</li>
+
+        <li class="nav-group-title">Leave Applications</li>
         <li class="nav-submenu open">
             <a class="nav-submenu-title">
                 <i class="feather icon-box"></i>
-                <span>Repo Rescue</span>
+                <span>Leave Application</span>
                 <i class="feather icon-chevron-down"></i>
             </a>
             <ul class="nav-menu menu-collapse" style="display: block;">
                 <li class="nav-menu-item">
-                  <%= link_to reporescues_path do %>
+                  <%= link_to leaveapps_path do %>
 
-                      Active Repo's
+                    Leave History
                     <% end %>
                 </li>
 
                 <li class="nav-menu-item">
-                  <%= link_to new_reporescue_path do %>
-                  Apply For Rescue
+                  <%= link_to new_leaveapp_path do %>
+                  Apply For Emergency Leave Appication
+                  <% end %>
+                </li>
+
+            </ul>
+        </li>
+        <li class="nav-group-title">Care Packs</li>
+        <li class="nav-submenu open">
+            <a class="nav-submenu-title">
+                <i class="feather icon-box"></i>
+                <span>Care Packs</span>
+                <i class="feather icon-chevron-down"></i>
+            </a>
+            <ul class="nav-menu menu-collapse" style="display: block;">
+                <li class="nav-menu-item">
+                  <%= link_to carepacks_path do %>
+
+                    Recent  Care Packs
+                    <% end %>
+                </li>
+
+                <li class="nav-menu-item">
+                  <%= link_to new_carepack_path do %>
+                  Apply For Care Packs
                   <% end %>
                 </li>
 
             </ul>
         </li>
 
-        <li class="nav-group-title">Repair Rescue</li>
-        <li class="nav-submenu open">
-            <a class="nav-submenu-title">
-                <i class="feather icon-box"></i>
-                <span>Repair Rescue</span>
-                <i class="feather icon-chevron-down"></i>
-            </a>
-            <ul class="nav-menu menu-collapse" style="display: block;">
-                <li class="nav-menu-item">
-                  <%= link_to reporepairs_path do %>
-
-                    Repair  Bookings
-                    <% end %>
-                </li>
-
-                <li class="nav-menu-item">
-                  <%= link_to new_reporepair_path do %>
-                  Apply For Repairs
-                  <% end %>
-                </li>
-
-            </ul>
-        </li>
 
 
         <li class="nav-submenu">

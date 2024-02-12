@@ -98,23 +98,7 @@
               </li>
 
 
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                Rentals
-                  <i class='bx bx-chevron-down'></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <% @rentals.each do |a| %>
-                  <li class="nav-item">
-                    <%= link_to a, class: "nav-link" do %>
-                    <%= a.title %>
-                    <% end %>
-                  </li>
-                  <% end %>
-
-                </ul>
-
-              </li>
+          
               <li class="nav-item">
                 <%= link_to services_path, class: "nav-link active" do %>
                 Our Services
