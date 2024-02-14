@@ -7,11 +7,11 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:account_update, keys:[:email, :password, :password_confirmation, :current_password, :first_name, :last_name, :status, :verified, :body, :balance
+    devise_parameter_sanitizer.permit(:account_update, keys:[:email, :password, :password_confirmation, :current_password, :username, :phone, :referal, :terms
       ])
     end
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys:[:email, :password, :password_confirmation, :current_password, :first_name, :last_name, :status, :verified, :body, :balance ])
+      devise_parameter_sanitizer.permit(:sign_up, keys:[:email, :password, :password_confirmation, :current_password, :username, :phone, :referal, :terms ])
       end
       private
       def layout_by_resource
