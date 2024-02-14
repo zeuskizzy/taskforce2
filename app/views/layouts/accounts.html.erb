@@ -60,7 +60,7 @@
 
               <% if Header.exists? %>
               <% @headers.take(1).each do |h| %>
-              <div class="col-md-4 bg-size-cover d-flex align-items-center p-4" style="background-image: url(<%= asset_path "bg-3.jpg" %>);">
+              <div class="col-md-4 bg-size-cover d-flex align-items-center p-4" style="background-image: url(<%= h.headerimg_url.to_s %>);">
                 <div>
                   <div class="mb-5">
                     <div class="logo">
