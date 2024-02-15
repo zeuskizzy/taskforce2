@@ -84,20 +84,20 @@
               </div>
               <% end %>
 
+
+              <% @headers.take(1).each do |a| %>
               <div class="col-md-8 px-0">
                 <div class="card-body">
-                  <h2 >Welcome To The Favis</h2>
+                  <h2 ><%= a.admin_title %></h2>
                   <p class=" mt-4 mb-5 o-75">
-                    At Favis Rentals, our mission transcends beyond providing services—we aim to empower fellow Turo hosts. <br>
-
-We want them to fully enjoy the fruits of their rental businesses without the burden of daily operational tasks. With our comprehensive understanding of the Turo platform's intricacies, we've refined a system that allows hosts to maximize their profitability with minimal effort.
-
+                    <%= a.admin_sub_title %>
                   </p>
 
                   <%= link_to 'Next', new_account_path, class: "btn btn-primary w-100" %>
 
                 </div>
               </div>
+              <% end %>
 
 
 
