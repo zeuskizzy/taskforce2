@@ -14,13 +14,13 @@
     <div class="form-input row col-6">
       <%= f.input :username,
                   required: true, class: "form-control",
-                  autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"}%>
+                  autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"} %>
 
       </div>
       <div class="form-input row col-6">
-        <%= f.input :phone
+        <%= f.input :phone,
                     required: true, class: "form-control",
-                    autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"}%>
+                    autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"} %>
 
         </div>
 
@@ -62,12 +62,14 @@
 
 
   <div class="form-input row col-12">
-    <%= f.button :submit, " Register", class: "button py-20 -dark-1 bg-blue-1 btn-primary col-12" do %>   <div class="icon-arrow-top-right ml-15"> <% end %>
+    <%= f.button :submit, " Register", class: "button py-20 -dark-1 bg-blue-1 btn-primary col-12" do %>
+      <div class="icon-arrow-top-right ml-15">
+        <% end %>
   </div>
 <% end %>
 <div class="divider">
-                                    <span class="divider-text text-muted">or login </span>
-                                </div>
+        <span class="divider-text text-muted">or login </span>
+  </div>
 <%= render "devise/shared/links" %>
 
 </div>
