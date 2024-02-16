@@ -9,15 +9,15 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="col-12">
+  <div class=" row col-12">
 
-    <div class="form-input row col-6">
+    <div class="form-input col-6">
       <%= f.input :username,
                   required: true, class: "form-control",
                   autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"} %>
 
       </div>
-      <div class="form-input row col-6">
+      <div class="form-input  col-6">
         <%= f.input :phone,
                     required: true, class: "form-control",
                     autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"} %>
