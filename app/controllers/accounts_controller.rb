@@ -78,7 +78,7 @@ class AccountsController < InheritedResources::Base
   end
 
     def account_params
-      params.require(:account).permit(:account_number, :status, :slug, :user_id)
+      params.require(:account).permit(:account_number, :status, :slug, :first_name, :last_name, :state, :relationship, :city, :zipcode, :address, :user_id)
     end
 
 end

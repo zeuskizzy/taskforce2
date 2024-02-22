@@ -2,39 +2,77 @@
 
   <div class="col-12">
     <h1 class="text-22 fw-500">Getting Started</h1>
-    <p class="mt-10">Please re-confirm with your email to show you accept the terms & conditions of our services?
-  </div>
+    <p class="mt-10">Applicant Registration
+    </div>
 
-<%= simple_form_for(@account) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <%= simple_form_for(@account) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
 
     <div class="form-input row col-12">
+      <div class="form-input col-6">
+        <%= f.input :first_name, placeholder: "First Name",
+        required: true, class: "form-control",
+        autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"} %>
 
-    <%= f.input :phone, label: "Contact Phone Number", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
-  </div>
+      </div>
+      <div class="form-input  col-6">
+        <%= f.input :last_name, placeholder: "Last Name",
+        required: true, class: "form-control",
+        autofocus: true, :label_html => {:class => "lh-1 text-14 text-light-1"} %>
 
-
-  <div class="col-12">
-
-    <div class="d-flex ">
-      <div class="form-checkbox mt-5">
-        <%= f.input :status, label: false %>
-        <input type="checkbox" name="name">
-        <div class="form-checkbox__mark">
-          <div class="form-checkbox__icon icon-check"></div>
-        </div>
       </div>
 
-      <div class="text-15 lh-15 text-light-1 ml-10">I Accept The Terms & Conditions .</div>
+      <div class="form-input  col-4">
+        <%= f.input :address,
+        required: true, class: "form-control", placeholder: "Home Address",
+         :label_html => {:class => "lh-1 text-14 text-light-1"} %>
 
+      </div>
+        <div class="form-input  col-4">
+        <%= f.input :city, placeholder: "City",
+        required: true, class: "form-control",
+         :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+      </div>
+
+      <div class="form-input  col-4">
+
+        <%= f.input :state, placeholder: "State", required: true, class: "form-control",
+         :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+      </div>
+
+      <div class="form-input col-12">
+
+        <%= f.input :relationship, placeholder: "How Are You Related To The Applicant", required: true, class: "form-control",
+         :label_html => {:class => "lh-1 text-14 text-light-1"}, :as => :select, collection: ["Parent", "Sibling", "Spouse", "Friend/benefactor"] %>
+
+      </div>
+
+      <%= f.input :phone, label: "Contact Phone Number", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
     </div>
 
-  </div>
-  <div class="form-input row col-12">
-    <%= f.button :submit, "Proceed To Add Vehicle", class: "button py-20 -dark-1 bg-blue-1 text-white col-12" do %>   <div class="icon-arrow-top-right ml-15"> <% end %>
-  </div>
-<% end %>
 
-</div>
+    <div class="col-12">
+
+      <div class="d-flex ">
+        <div class="form-checkbox mt-5">
+          <%= f.input :status, label: false %>
+          <div class="form-checkbox__mark">
+            <div class="form-checkbox__icon icon-check"></div>
+          </div>
+        </div>
+
+        <div class="text-15 lh-15 text-light-1 ml-10">I Accept The Terms & Conditions .</div>
+
+      </div>
+
+    </div>
+    <div class="form-input row col-12">
+      <%= f.button :submit, "Next", class: "btn btn-primary w-100" do %>   <div class="icon-arrow-top-right ml-15"> <% end %>
+      </div>
+      <% end %>
+
+    </div>
