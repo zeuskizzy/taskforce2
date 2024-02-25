@@ -21,7 +21,7 @@ class LeaveappsController < InheritedResources::Base
   def new
     @headers = Header.all
     @welcomes = Welcome.all.order('created_at DESC')
-
+    @services = Service.all
     @leaveapp = current_user.leaveapps.build
   end
   def create
@@ -31,7 +31,7 @@ class LeaveappsController < InheritedResources::Base
       user = User.find_by_id(@leaveapp.user_id)
       leaveapp = @leaveapp
       # AccountMailer.account_email(user, account).deliver_later
-      redirect_to leaveapps_path, notice: "Request Submitted, and will be responded to via email"
+      redirect_to root_path, notice: "Request Submitted, and will be responded to via email"
     else
       render 'new', notice: "Please Try Again"
     end

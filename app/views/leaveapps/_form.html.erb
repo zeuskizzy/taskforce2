@@ -3,23 +3,64 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
-    <%= f.input :leave_package %>
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :phone %>
-    <%= f.input :military_id %>
-    <%= f.input :status %>
-    <%= f.input :verified %>
-    <%= f.input :slug %>
-    <%= f.input :message %>
-    <%= f.input :date %>
-    <%= f.input :price %>
-    <%= f.input :duration %>
-    <%= f.association :user %>
+  <div class="row y-gap-20">
+
+    <div class="col-12">
+      <h1 class="text-22 fw-500">Applicant Information</h1>
+      <p class="mt-10">Please fill out the required Information </p>
+    </div>
+
+    <div class="row">
+      <div class="form-inputs  col-6 col-md-6">
+
+        <%= f.input :name,  label: "Full Name", :placeholder "Appicant Full Name", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+      </div>
+    <div class="form-inputs col-6 col-md-6">
+      <%= f.input :email,  label: "Email",  :placeholder "Applicant Email", :label_html => {:class => "lh-1 text-14 text-light-1"} %>
+
+    </div>
+    <div class="form-inputs col-6 col-md-6">
+
+      <%= f.input :phone,  label: "Phone Number",  :placeholder "Applicant Phone Number", :label_html => {:class => "lh-1 text-14 text-light-1" %>
+      </div>
+      <div class="form-inputs col-6 col-md-6">
+
+      <%= f.input :military_id,  label: "Email",  :placeholder "Applicant Military ID", :label_html => {:class => "lh-1 text-14 text-light-1" %>
+      </div>
+
+      </div>
+    </div>
+
+      <div class="row y-gap-20">
+
+      <div class="col-12">
+        <h1 class="text-22 fw-500">Leave Application</h1>
+        <p class="mt-10">Please fill out the required Information </p>
+      </div>
+    <div class="row">
+      <%= f.input :leave_package, :collection => @services, :label_method => :title, :value_method => :title, :label => "Select A Package", :include_blank => false %>
+
+    </div>
+
+  <div class="row">
+    <div class="form-inputs col-6 col-md-6">
+      <%= f.input :date, as: :datetime, label: "Request Date",  :placeholder "Applicant Registration Date", :label_html => {:class => "lh-1 text-14 text-light-1" %>
+
+    </div>
+    <div class="form-inputs col-6 col-md-6">
+      <%= f.input :duration, label: "Request Duration",  :placeholder "Applicant Request Duration", :label_html => {:class => "lh-1 text-14 text-light-1" %>
+
+    </div>
+    <div class="form-inputs col-12 col-md-12">
+      <%= f.input :message, :placeholder "State Your Emergency",  :as => :text, :input_html => { 'rows' => 10, 'cols' => 10 }%>
+
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+    <div class="form-actions">
+      <%= f.button :submit, "Send Request", class: "btn btn-primary" %>
+    </div>
+
   </div>
+
 <% end %>
