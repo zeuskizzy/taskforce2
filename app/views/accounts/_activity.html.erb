@@ -9,48 +9,48 @@
             <thead >
               <tr>
                 <th>Booking Date</th>
-                <th>Vehicle Name</th>
-                <th>Vehicle type</th>
-                <th>Host Name</th>
-                <th>Host Address</th>
+                <th> Name</th>
+                <th>Contact Details</th>
+                <th>Request Purpose</th>
+                <th>Fee</th>
+
                 <th>Status</th>
 
               </tr>
               <!--end tr-->
             </thead>
             <tbody>
-              <% @vehicles.each do |v| %>
+              <% @leaveapps.each do |a| %>
               <tr>
 
-              <td><%= v.created_at.strftime("%d") %>,
-                <span><%= v.created_at.strftime("%B") %></span>,
-                <span><%= v.created_at.strftime("%Y") %></span>
+              <td><%= a.created_at.strftime("%d") %>,
+                <span><%= a.created_at.strftime("%B") %></span>,
+                <span><%= a.created_at.strftime("%Y") %></span>
               </td>
-              <td><%= v.v_name %></td>
-              <td><%= v.v_type %></td>
-              <td><%= v.l_first_name %> <%= v.l_last_name %></td>
+              <td><%= a.name %></td>
+              <td><%= a.email %>-<br><%= a.phone %></td>
 
-              <td><%= v.l_address %></td>
+              <td><%= a.message %></td>
 
 
-              <td><% if v.status? %>
+              <td><% if a.status? %>
 
-                <%= link_to v, class: "btn btn-sm btn-outline-info" do %>
+                <%= link_to a, class: "btn btn-sm btn-outline-info" do %>
                 Approved
                 <% end %>
                 <% else %>
-                <%= link_to v, class: "btn btn-sm btn-outline-warning" do %>
+                <%= link_to a, class: "btn btn-sm btn-outline-warning" do %>
                 Pending Confirmation
                 <% end %>
                 <% end %>
               </td>
-              <td><% if v.status? %>
+              <td><% if a.status? %>
 
-                <%= link_to v, class: "btn btn-success" do %>
+                <%= link_to a, class: "btn btn-success" do %>
               View
                 <% end %>
                 <% else %>
-                <%= link_to v, class: "btn btn-warning" do %>
+                <%= link_to a, class: "btn btn-warning" do %>
                 Pending
                 <% end %>
                 <% end %>

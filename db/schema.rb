@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_02_10_173046) do
+ActiveRecord::Schema.define(version: 2024_02_22_213438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 2024_02_10_173046) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "email"
     t.string "phone"
+    t.string "first_name"
+    t.string "last_name"
+    t.string "state"
+    t.string "city"
+    t.string "zipcode"
+    t.string "address"
+    t.string "relationship"
     t.index ["slug"], name: "index_accounts_on_slug"
     t.index ["user_id"], name: "index_accounts_on_user_id"
   end
@@ -217,6 +224,26 @@ ActiveRecord::Schema.define(version: 2024_02_10_173046) do
     t.text "tc"
     t.string "headertext"
     t.string "headersubtext"
+  end
+
+  create_table "leaveapps", force: :cascade do |t|
+    t.string "leave_package"
+    t.string "name"
+    t.string "email"
+    t.string "phone"
+    t.string "military_id"
+    t.boolean "status"
+    t.boolean "verified"
+    t.string "slug"
+    t.string "message"
+    t.datetime "date"
+    t.string "price"
+    t.string "duration"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slug"], name: "index_leaveapps_on_slug"
+    t.index ["user_id"], name: "index_leaveapps_on_user_id"
   end
 
   create_table "listingcats", force: :cascade do |t|
@@ -484,6 +511,7 @@ ActiveRecord::Schema.define(version: 2024_02_10_173046) do
   add_foreign_key "accounts", "users"
   add_foreign_key "bookings", "users"
   add_foreign_key "carepacks", "users"
+  add_foreign_key "leaveapps", "users"
   add_foreign_key "reporepairs", "users"
   add_foreign_key "reporescues", "users"
   add_foreign_key "sections", "services"

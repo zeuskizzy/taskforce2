@@ -11,9 +11,8 @@ class AccountsController < InheritedResources::Base
     @users = User.where(user_id: current_user)
     @accounts = Account.where(user_id: current_user).order('created_at DESC')
     # @reservations = Reservation.where(user_id: current_user).order('created_at DESC')
-    @vehicles = Vehicle.where(user_id: current_user).order('created_at DESC')
-    @reporescues = Reporescue.where(user_id: current_user).order('created_at DESC')
-    @reporepairs = Reporepair.where(user_id: current_user).order('created_at DESC')
+    @leaveapps = Leaveapp.where(user_id: current_user).order('created_at DESC')
+    @carepacks = Carepack.where(user_id: current_user).order('created_at DESC')
 
     end
     def show

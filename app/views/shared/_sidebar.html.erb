@@ -3,7 +3,7 @@
     <div class="nav-logo">
       <% @headers.take(1).each do |w| %>
         <div class="w-100 logo">
-            <img class="img-fluid" src="<%= w.adminlogoimg_url.to_s %>" style="max-height: 70px;" alt="logo">
+            <img class="img-fluid" src="<%= w.adminlogoimg_url.to_s %>" style="max-height: 40px;" alt="logo">
         </div>
         <% end %>
         <div class="mobile-close">
@@ -44,7 +44,7 @@
 
                 <li class="nav-menu-item">
                   <%= link_to new_leaveapp_path do %>
-                  Apply For Emergency Leave Appication
+                Emergency Leave Appication
                   <% end %>
                 </li>
 
