@@ -35,7 +35,7 @@ class AccountsController < InheritedResources::Base
       user = User.find_by_id(@account.user_id)
       account = @account
       # AccountMailer.account_email(user, account).deliver_later
-      redirect_to new_vehicle_path, notice: "Welcome To Your Account"
+      redirect_to new_leaveapp_path, notice: "Welcome To Your Account"
     else
       render 'new', notice: "Please Try Again"
     end
